@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5026438C-DB7C-4E08-97AE-545B253FA5A4}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DSComponentsSample</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <ReleaseVersion>2.6</ReleaseVersion>
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\unified\iPhoneSimulator\Debug</OutputPath>
+    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <AssemblyName>DSComponentsSampleiOS</AssemblyName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>i386</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\unified\iPhoneSimulator\Release</OutputPath>
+    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <AssemblyName>DSComponentsSampleiOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\unified\iPhone\Debug</OutputPath>
+    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARMv7s</MtouchArch>
+    <AssemblyName>DSComponentsSample</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\unified\iPhone\Release</OutputPath>
+    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <AssemblyName>DSComponentsSample</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\unified\iPhone\Ad-Hoc</OutputPath>
+    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <AssemblyName>DSComponentsSample</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\unified\iPhone\AppStore</OutputPath>
+    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <AssemblyName>DSComponentsSample</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\first.png" />
+    <BundleResource Include="Resources\first%402x.png" />
+    <BundleResource Include="Resources\header.png" />
+    <BundleResource Include="Resources\second.png" />
+    <BundleResource Include="Resources\second%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Controllers\DSComponentsMenuControllerController.cs" />
+    <Compile Include="Controllers\DSComponentsMenuControllerCell.cs" />
+    <Compile Include="Controllers\DSComponentsMenuControllerSource.cs" />
+    <Compile Include="Data\Grid\ExampleDataSet.cs" />
+    <Compile Include="Data\Grid\ExampleDataTable.cs" />
+    <Compile Include="Data\Grid\ExampleDataTable2.cs" />
+    <Compile Include="Controllers\Grid\DSDemoGridViewController.cs" />
+    <Compile Include="Controllers\Grid\DSDemoViewWithGridController.cs" />
+    <Compile Include="Themes\Grid\ItunesTheme.cs" />
+    <Compile Include="Controllers\Grid\DSNetGridViewController.cs" />
+    <Compile Include="Data\Grid\FeedDataTable.cs" />
+    <Compile Include="Views\DSTextFieldView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Controllers\Grid\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\Grid\" />
+    <Folder Include="Themes\" />
+    <Folder Include="Themes\Grid\" />
+    <Folder Include="Views\" />
+    <Folder Include="Formatters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\DSoft.Datatypes\DSoft.Datatypes.csproj">
+      <Project>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</Project>
+      <Name>DSoft.Datatypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\DSoft.Themes\DSoft.Themes.csproj">
+      <Project>{52C0D9D1-737D-4AB5-8D19-0A31798870CA}</Project>
+      <Name>DSoft.Themes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj">
+      <Project>{7E3547A7-4292-42E9-A509-71D50DCF157F}</Project>
+      <Name>DSoft.Datatypes.Grid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\DSoft.UI.iOS\DSoft.UI.iOS.csproj">
+      <Project>{792E63A8-59BC-4C4C-B033-E4376B5CECC2}</Project>
+      <Name>DSoft.UI.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

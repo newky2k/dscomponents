@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA59A942-1CDA-4E96-A514-3D926E6ECF8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DSoft.UI.Mac</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>DSoft.UI.Mac</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <ReleaseVersion>2.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Grid\" />
+    <Folder Include="Grid\Views\" />
+    <Folder Include="Grid\Views\Collections\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\DSGridDataExtensions.cs" />
+    <Compile Include="Grid\DSGridView.cs" />
+    <Compile Include="Grid\Views\DSGridCellView.cs" />
+    <Compile Include="Grid\Views\DSGridRowView.cs" />
+    <Compile Include="Grid\Views\Collections\DSGridCellViewCollection.cs" />
+    <Compile Include="Grid\Views\Collections\DSGridRowViewCollection.cs" />
+    <Compile Include="Extensions\DSTypeExtensions.cs" />
+    <Compile Include="Extensions\NSColorExtensions.cs" />
+    <Compile Include="Extensions\NSViewExtensions.cs" />
+    <Compile Include="Grid\DSGridViewContainer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\checkmark.png" />
+    <BundleResource Include="Resources\checkmark%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\DSoft.Datatypes\DSoft.Datatypes.csproj">
+      <Project>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</Project>
+      <Name>DSoft.Datatypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj">
+      <Project>{7E3547A7-4292-42E9-A509-71D50DCF157F}</Project>
+      <Name>DSoft.Datatypes.Grid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\DSoft.Themes\DSoft.Themes.csproj">
+      <Project>{52C0D9D1-737D-4AB5-8D19-0A31798870CA}</Project>
+      <Name>DSoft.Themes</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

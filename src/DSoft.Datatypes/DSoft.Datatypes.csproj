@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DSoft.Datatypes</RootNamespace>
+    <AssemblyName>DSoft.Datatypes</AssemblyName>
+    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
+    <ReleaseVersion>2.6</ReleaseVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Debug\DSoft.Datatypes.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Release\DSoft.Datatypes.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\DSColor.cs" />
+    <Compile Include="Types\DSFont.cs" />
+    <Compile Include="Enums\DSEnums.cs" />
+    <Compile Include="Types\DSBitmap.cs" />
+    <Compile Include="Base\DSFormatter.cs" />
+    <Compile Include="Types\DSSize.cs" />
+    <Compile Include="UI\DSMoreMenuItem.cs" />
+    <Compile Include="Base\ObservableClass.cs" />
+    <Compile Include="UI\DSMoreButtonMenuItem.cs" />
+    <Compile Include="UI\DSMoreContentMenuItem.cs" />
+    <Compile Include="UI\DSMoreSegmentMenuItem.cs" />
+    <Compile Include="UI\Collections\DSMoreMenuItemCollection.cs" />
+    <Compile Include="UI\Interfaces\IDSFlyoutContent.cs" />
+    <Compile Include="UI\DSToolbarItem.cs" />
+    <Compile Include="UI\Collections\DSToolbarItemCollection.cs" />
+    <Compile Include="DisposableList.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Types\DSPoint.cs" />
+    <Compile Include="Types\DSDSRectangle.cs" />
+    <Compile Include="Formatters\DSImageFormatter.cs" />
+    <Compile Include="Formatters\DSBooleanFormatter.cs" />
+    <Compile Include="Types\DSInset.cs" />
+    <Compile Include="Formatters\DSTextFormatter.cs" />
+    <Compile Include="Helpers\GenericsHelper.cs" />
+    <Compile Include="UI\Interfaces\IGridCellView.cs" />
+    <Compile Include="Formatters\DSViewFormatter.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Types\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Base\" />
+    <Folder Include="UI\" />
+    <Folder Include="UI\Collections\" />
+    <Folder Include="UI\Interfaces\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Formatters\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+</Project>

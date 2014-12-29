@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BBAF175-B6D9-427C-AD1A-157716AFBBCD}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DSoft.UI.Calendar</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <ReleaseVersion>1.5</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG; TRIALS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <GenerateDocumentation>true</GenerateDocumentation>
+    <AssemblyName>DSoft.UI.Calendar</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AssemblyName>DSoft.UI.Calendar</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial|iPhoneSimulator' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\ReleaseTrial</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <AssemblyName>DSoftUICalendar</AssemblyName>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial|iPhone' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\ReleaseTrial</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <AssemblyName>DSoftUICalendar</AssemblyName>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewControlllers\" />
+    <Folder Include="Themes\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Data\" />
+    <Folder Include="Views\Metro\" />
+    <Folder Include="Views\iOS\" />
+    <Folder Include="Views\OSX\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Views\DSCalendarView.cs" />
+    <Compile Include="ViewControlllers\DSCalendarViewController.cs" />
+    <Compile Include="Views\DSCalendarHeaderView.cs" />
+    <Compile Include="Views\DSCalendarGridView.cs" />
+    <Compile Include="Views\DSCalendarHeaderCell.cs" />
+    <Compile Include="Themes\DSCalendarTheme.cs" />
+    <Compile Include="Themes\DSCalendarDefaultTheme.cs" />
+    <Compile Include="Themes\DSCalendariCalOSXTheme.cs" />
+    <Compile Include="Themes\DSCalendarMetroTheme.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Data\DSCalendarCellInfo.cs" />
+    <Compile Include="Data\DSCalendarEventKitDataSource.cs" />
+    <Compile Include="Views\DSCalendarEventsView.cs" />
+    <Compile Include="Views\Metro\MetroEventView.cs" />
+    <Compile Include="Views\iOS\iOSEventView.cs" />
+    <Compile Include="Views\OSX\OSXEventView.cs" />
+    <Compile Include="Helpers\TypeExtensions.cs" />
+    <Compile Include="Views\DSEventView.cs" />
+    <Compile Include="Views\DSMoreEventsView.cs" />
+    <Compile Include="Views\iOS\iOSMoreEventsView.cs" />
+    <Compile Include="Views\OSX\OSXMoreEventsView.cs" />
+    <Compile Include="Views\Metro\MetroMoreEventsView.cs" />
+    <Compile Include="Views\DSCalendarCell.cs" />
+    <Compile Include="Data\DSCalendarDefaultDelegate.cs" />
+    <Compile Include="Views\DSTouchView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\DSoft.Datatypes.Calendar\DSoft.Datatypes.Calendar.csproj">
+      <Project>{EB516F43-9042-4710-A409-F7122823FA66}</Project>
+      <Name>DSoft.Datatypes.Calendar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\DSoft.Datatypes\DSoft.Datatypes.csproj">
+      <Project>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</Project>
+      <Name>DSoft.Datatypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

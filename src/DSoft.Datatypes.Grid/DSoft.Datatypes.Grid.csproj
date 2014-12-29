@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E3547A7-4292-42E9-A509-71D50DCF157F}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DSoft.Datatypes.Grid</RootNamespace>
+    <AssemblyName>DSoft.Datatypes.Grid</AssemblyName>
+    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ReleaseVersion>2.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Release\DSoft.Datatypes.Grid.xml</DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\DSoft.Datatypes\DSoft.Datatypes.csproj">
+      <Project>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</Project>
+      <Name>DSoft.Datatypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\DSDataColumn.cs" />
+    <Compile Include="Data\DSDataRow.cs" />
+    <Compile Include="Data\DSDataSet.cs" />
+    <Compile Include="Data\DSDataTable.cs" />
+    <Compile Include="Data\DSDataValue.cs" />
+    <Compile Include="Data\Collections\DSDataColumnCollection.cs" />
+    <Compile Include="Data\Collections\DSDataRowCollection.cs" />
+    <Compile Include="Data\Collections\DSDataTableCollection.cs" />
+    <Compile Include="Data\Collections\DSDataValueCollection.cs" />
+    <Compile Include="Data\Interfaces\IDSDataSource.cs" />
+    <Compile Include="MetaData\DSGridViewCellInfo.cs" />
+    <Compile Include="MetaData\Collections\DSGridViewCellInfoCollection.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="IDSDataGridView.cs" />
+    <Compile Include="Interfaces\IDSGridRowView.cs" />
+    <Compile Include="Shared\DSGridProcessor.cs" />
+    <Compile Include="Data\Collections\IDSGridRowViewCollection.cs" />
+    <Compile Include="Shared\DSCellProcessor.cs" />
+    <Compile Include="Interfaces\IDSGridCellView.cs" />
+    <Compile Include="Shared\DSRowProcessor.cs" />
+    <Compile Include="Data\Collections\IDSGridCellViewCollection.cs" />
+  </ItemGroup>
+</Project>

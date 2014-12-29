@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A1DA7A8-309F-4375-8548-8ECE4E473BA7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DSComponentsSampleMac</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>DSComponentsSampleMac</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <ReleaseVersion>2.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Views\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\Grid\" />
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindowController.cs" />
+    <Compile Include="Views\MainWindowController.designer.cs">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.designer.cs">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.cs">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocalDSGridView.cs" />
+    <Compile Include="Data\Grid\ExampleDataSet.cs" />
+    <Compile Include="Data\Grid\ExampleDataTable.cs" />
+    <Compile Include="Data\Grid\ExampleDataTable2.cs" />
+    <Compile Include="Data\Grid\FeedDataTable.cs" />
+    <Compile Include="Views\DSTextFieldView.cs" />
+    <Compile Include="Themes\ItunesTheme.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Views\MainWindow.xib">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </InterfaceDefinition>
+    <InterfaceDefinition Include="Resources\MainMenu.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\DSoft.Datatypes\DSoft.Datatypes.csproj">
+      <Project>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</Project>
+      <Name>DSoft.Datatypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj">
+      <Project>{7E3547A7-4292-42E9-A509-71D50DCF157F}</Project>
+      <Name>DSoft.Datatypes.Grid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\DSoft.Themes\DSoft.Themes.csproj">
+      <Project>{52C0D9D1-737D-4AB5-8D19-0A31798870CA}</Project>
+      <Name>DSoft.Themes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Mac\DSoft.UI.Mac\DSoft.UI.Mac.csproj">
+      <Project>{DA59A942-1CDA-4E96-A514-3D926E6ECF8A}</Project>
+      <Name>DSoft.UI.Mac</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\header.png" />
+  </ItemGroup>
+</Project>

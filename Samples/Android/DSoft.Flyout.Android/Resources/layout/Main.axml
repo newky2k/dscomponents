@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_layout"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<!--  SCENE  -->
+    <RelativeLayout
+        android:id="@+id/scene_layout"
+        android:drawingCacheQuality="low"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <dsoft.ui.flyout.DSGridView
+            android:id="@+id/scene_scroller"
+            android:drawingCacheQuality="low"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </RelativeLayout>
+</RelativeLayout>

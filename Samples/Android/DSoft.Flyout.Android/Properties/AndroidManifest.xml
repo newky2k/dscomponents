@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="0206" android:versionName="2.6" package="DSoft.Flyout.Droid">
+  <uses-sdk />
+  <application android:label="DSoft.Flyout.Droid">
+  </application>
+</manifest>
