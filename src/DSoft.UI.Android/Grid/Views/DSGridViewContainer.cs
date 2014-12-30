@@ -171,35 +171,6 @@ namespace DSoft.UI.Grid.Views
 		
 		}
 			
-		/// <summary>
-		/// Adds the rows.
-		/// </summary>
-		private void AddRows ()
-		{
-
-
-			var posY = (int)mParentGrid.Theme.HeaderHeight;
-
-			for (int loop = 0; loop < mParentGrid.Processor.NumberOfRows; loop++)
-			{
-				var aRowView = mParentGrid.Processor.FindViewForRow (loop, (Index)=>
-				{
-					return new DSGridRowView (Index, this.mParentGrid);
-				}) as DSGridRowView;
-
-				//var aRowView = new DSGridRowView (this);
-				//aRowView.Processor.Style = CellStyle.Cell;
-				var lp = new DSAbsoluteLayout.DSAbsoluteLayoutParams (LayoutParams.FillParent, Context.ToDevicePixels ((int)mParentGrid.Processor.RowHeight), 0, posY);
-				aRowView.LayoutParameters = lp;
-				//aRowView.Processor.Style = CellStyle.Cell;
-
-				aRowView.Initialize();
-
-				mContainer.AddView (aRowView);
-				posY += Context.ToDevicePixels ((int)mParentGrid.Processor.RowHeight);
-			}
-
-		}
 
 		/// <summary>
 		/// Builds the grid.
@@ -209,20 +180,25 @@ namespace DSoft.UI.Grid.Views
 			//this.RemoveAllViews ();
 
 			CleanUpViews();
-
+	
 			//need to calculate the width based on the columns within the datasource
 			var container = new DSAbsoluteLayout (Context);
+			container.SetBackgroundColor(Color.Transparent);
 
-			container.LayoutParameters = new ViewGroup.LayoutParams (Context.ToDevicePixels ((int)ContentSize.Width), LayoutParams.FillParent);
+
+			var contSize = ContentSize;
+			container.LayoutParameters = new ViewGroup.LayoutParams (Context.ToDevicePixels ((int)contSize.Width), Context.ToDevicePixels ((int)contSize.Height));
 			mContainer = container;
 
 			this.AddView (mContainer);
 
-			//DrawHeaderRow ();
+			var aView = new View(Context);
+			aView.SetBackgroundColor(Color.Transparent);
+			aView.LayoutParameters = new ViewGroup.LayoutParams (Context.ToDevicePixels ((int)contSize.Width), Context.ToDevicePixels ((int)contSize.Height));
+			mContainer.AddView(aView);
 
 			DrawViews();
 
-			//AddRows ();
 		}
 
 		/// <summary>
@@ -397,7 +373,8 @@ namespace DSoft.UI.Grid.Views
 
 			if (t != oldt)
 			{
-				this.RequestLayout ();
+
+				//this.RequestLayout ();
 				//hasDrawn = false;
 
 
