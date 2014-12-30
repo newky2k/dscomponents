@@ -56,6 +56,7 @@
     <Compile Include="Data\Grid\ExampleDataTable.cs" />
     <Compile Include="Data\Grid\ExampleDataTable2.cs" />
     <Compile Include="LayoutActivity.cs" />
+    <Compile Include="Views\DSTextFieldView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -91,5 +92,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Data\Grid\" />
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>

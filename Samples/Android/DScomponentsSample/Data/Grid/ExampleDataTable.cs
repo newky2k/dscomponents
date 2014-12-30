@@ -8,6 +8,7 @@ using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Content.Res;
 using Android.Content;
+using DSComponentsSample.Views;
 
 namespace DSComponentsSample.Data.Grid
 {
@@ -25,6 +26,7 @@ namespace DSComponentsSample.Data.Grid
 
 		#endregion Fields
 
+		#region Properties
 		private DSBitmap[] Icons {
 			get
 			{
@@ -49,12 +51,22 @@ namespace DSComponentsSample.Data.Grid
 				return aImage.ToDSBitmap();
 			}
 		}
+		#endregion
 
+		#region Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="DSComponentsSample.Data.Grid.ExampleDataTable"/> class.
+		/// </summary>
 		public ExampleDataTable ()
 		{
 
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="DSComponentsSample.Data.Grid.ExampleDataTable"/> class.
+		/// </summary>
+		/// <param name="EntryPoint">Entry point.</param>
+		/// <param name="Name">Name.</param>
 		public ExampleDataTable (Context EntryPoint, String Name) : base (Name)
 		{
 			mEntryPoint = EntryPoint;
@@ -62,10 +74,10 @@ namespace DSComponentsSample.Data.Grid
 			var ColumnsDefs = new Dictionary<String,float> ();
 
 			ColumnsDefs.Add ("Image", 30);
-			ColumnsDefs.Add ("Ordered", 30);
+			ColumnsDefs.Add ("Ordered", 100);
 			ColumnsDefs.Add ("ID", 100);
 			ColumnsDefs.Add ("Date", 124);
-			ColumnsDefs.Add ("Title", 150);
+			//ColumnsDefs.Add ("Title", 150);
 			ColumnsDefs.Add ("Description", 550);
 			ColumnsDefs.Add ("Value", 100);
 
@@ -73,12 +85,13 @@ namespace DSComponentsSample.Data.Grid
 			{
 				// Create a column
 				var dc1 = new DSDataColumn (aKey);
-				dc1.Caption = aKey;
+
+				dc1.Caption = (aKey == "Ordered") ? "Record\nNumber" : aKey;
 				dc1.ReadOnly = true;
 
 				if (aKey.Equals ("Image"))
 				{
-					dc1.DataType = typeof(DSBitmap);
+					dc1.DataType = typeof(Bitmap);
 					dc1.AllowSort = false;
 					dc1.Formatter = new DSImageFormatter (new DSSize (ColumnsDefs [aKey], ColumnsDefs [aKey]));
 				}
@@ -87,13 +100,32 @@ namespace DSComponentsSample.Data.Grid
 					dc1.DataType = typeof(Boolean);
 					dc1.AllowSort = false;
 
-//					var boolFormatter = new DSBooleanFormatter (DSoft.UI.Grid.Enums.BooleanFormatterStyle.Text, "Yes", "No");
-//					boolFormatter.TextAlignment = DSoft.Datatypes.Enums.TextAlignment.Middle;
+					//					var boolFormatter = new DSBooleanFormatter (DSoft.UI.Grid.Enums.BooleanFormatterStyle.Text, "Yes", "No");
+					//					boolFormatter.TextAlignment = DSoft.Datatypes.Enums.TextAlignment.Middle;
 
 					var boolFormatter = new DSBooleanFormatter (BooleanFormatterStyle.Image);
-					boolFormatter.TrueValue = CheckBoxImage;
+					boolFormatter.Size = new DSSize (10, 10);
 
 					dc1.Formatter = boolFormatter;
+				}
+				else if (aKey.Equals ("Title"))
+				{
+					//add a custom view to allow us to update the title
+					//DSTextFieldView
+					dc1.DataType = typeof(String);
+					dc1.AllowSort = true;
+					dc1.ReadOnly = false;
+
+					var custFormatter = new DSViewFormatter(new DSTextFieldView(EntryPoint));
+					dc1.Formatter = custFormatter;
+				}
+				else if (aKey.Equals ("Value"))
+				{
+					dc1.DataType = typeof(String);
+					dc1.AllowSort = true;
+
+					//added a text formatter
+					dc1.Formatter = new DSTextFormatter (TextAlignment.Left);
 				}
 				else
 				{
@@ -107,22 +139,19 @@ namespace DSComponentsSample.Data.Grid
 				this.Columns.Add (dc1);
 			}
 
-		}
+			//add row defs to keep row ids
+			for(int loop = 0; loop < 1000; loop++)
+			{
+				var aRow = new DSDataRow ();
+				aRow ["Title"] = @"Test";
+				aRow ["ID"] = loop;
 
-		public override void SortByColumn (int ColumnIndex)
-		{
-			base.SortByColumn (ColumnIndex);
-			isUpSort = !isUpSort;
-		}
+				Rows.Add (aRow);
+			}
 
-		/// <summary>
-		/// Gets the row count.
-		/// </summary>
-		/// <returns>The row count.</returns>
-		public override int GetRowCount ()
-		{
-			return 100;
 		}
+		#endregion
+
 
 		/// <summary>
 		/// Gets the row at the specified indexs
@@ -131,7 +160,6 @@ namespace DSComponentsSample.Data.Grid
 		/// <param name="Index">Index.</param>
 		public override DSDataRow GetRow (int Index)
 		{
-
 			DSDataRow aRow = null;
 
 			if (Index < Rows.Count)
@@ -144,11 +172,7 @@ namespace DSComponentsSample.Data.Grid
 				aRow ["Title"] = @"Test";
 				Rows.Add (aRow);
 			}
-			var pos2 = (isUpSort) ? Index : 100 - Index;
 
-
-			aRow ["ID"] = pos2;
-			aRow ["Title"] = @"Test";
 			aRow ["Description"] = @"Some description would go here";
 			aRow ["Date"] = DateTime.Now.ToShortDateString ();
 			aRow ["Value"] = "10000.00";
@@ -162,6 +186,26 @@ namespace DSComponentsSample.Data.Grid
 		}
 
 		/// <summary>
+		/// Gets the row at the specified indexs
+		/// </summary>
+		/// <returns>The row.</returns>
+		/// <param name="Index">Index.</param>
+		/// <param name="RowId">Row identifier.</param>
+		public override DSDataRow GetRow(string RowId)
+		{
+			return base.GetRow(RowId);
+		}
+
+		/// <summary>
+		/// Return the index of the row with the matching ids
+		/// </summary>
+		/// <returns>The of row.</returns>
+		/// <param name="RowId">Row identifier.</param>
+		public override int IndexOfRow(string RowId)
+		{
+			return base.IndexOfRow(RowId);
+		}
+		/// <summary>
 		/// Gets the value.
 		/// </summary>
 		/// <returns>The value.</returns>
@@ -170,6 +214,17 @@ namespace DSComponentsSample.Data.Grid
 		public override DSDataValue GetValue (int RowIndex, string ColumnName)
 		{
 			return GetRow (RowIndex).Items [ColumnName];
+		}
+
+		/// <summary>
+		/// Sets the value.
+		/// </summary>
+		/// <param name="RowIndex">Row index.</param>
+		/// <param name="ColumnName">Column name.</param>
+		/// <param name="Value">Value.</param>
+		public override void SetValue (int RowIndex, string ColumnName, object Value)
+		{
+			GetRow (RowIndex).Items [ColumnName].Value = Value;
 		}
 	}
 }

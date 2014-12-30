@@ -8,13 +8,33 @@ namespace DSoft.Datatypes.Formatters
 	/// <summary>
 	/// Formatter with custom view class
 	/// </summary>
-	public abstract class DSViewFormatter : DSFormatter
+	public class DSViewFormatter : DSFormatter
 	{
+		private IDSCustomView mView; 
 		/// <summary>
 		/// Gets the view.
 		/// </summary>
 		/// <value>The view.</value>
-		public virtual IDSCustomView View { get { return null; } }
+		public virtual IDSCustomView View { get { return mView; } }
+
+		#region Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="DSoft.Datatypes.Formatters.DSViewFormatter"/> class.
+		/// </summary>
+		public DSViewFormatter()
+		{
+			
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="DSoft.Datatypes.Formatters.DSViewFormatter"/> class.
+		/// </summary>
+		/// <param name="">.</param>
+		public DSViewFormatter(IDSCustomView custView)
+		{
+			mView = custView;
+		}
+		#endregion
 	}
 
 	/// <summary>
