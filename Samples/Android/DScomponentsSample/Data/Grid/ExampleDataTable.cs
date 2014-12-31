@@ -140,7 +140,7 @@ namespace DSComponentsSample.Data.Grid
 			}
 
 			//add row defs to keep row ids
-			for(int loop = 0; loop < 1000; loop++)
+			for(int loop = 0; loop < 100; loop++)
 			{
 				var aRow = new DSDataRow ();
 				aRow ["Title"] = @"Test";
