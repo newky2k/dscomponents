@@ -33,7 +33,7 @@ screenshots:
   - component/screenshots/Screen2.png
   - component/screenshots/Screen3.png
 getting-started: component/GettingStarted.md
-version: "3.0"
+version: 3.0.1
 build:
   - path: src/DSComponents.sln
     configuration: "ReleaseTrial"
