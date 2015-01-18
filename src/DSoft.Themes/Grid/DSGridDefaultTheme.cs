@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="DSGridDefaultTheme.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using DSoft.Datatypes.Types;
 using DSoft.Datatypes.Enums;

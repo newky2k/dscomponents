@@ -1,4 +1,11 @@
-﻿using System;
+// ****************************************************************************
+// <copyright file="DSGridCellViewCollection.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
+using System;
 using System.Collections.ObjectModel;
 
 namespace DSoft.UI.Mac.Grid.Views.Collections

@@ -1,4 +1,11 @@
-﻿using System;
+// ****************************************************************************
+// <copyright file="IDSGridRowView.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
+using System;
 using DSoft.Datatypes.Enums;
 using DSoft.Datatypes.Grid.Shared;
 

@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="DSTouchView.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;

@@ -1,4 +1,11 @@
-﻿using System;
+// ****************************************************************************
+// <copyright file="DSGridProcessor.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
+using System;
 using System.Linq;
 using DSoft.Datatypes.Grid.Data.Collections;
 using DSoft.Datatypes.Grid.Data;

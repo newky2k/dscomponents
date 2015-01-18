@@ -1,4 +1,11 @@
-﻿using System;
+// ****************************************************************************
+// <copyright file="MainWindow.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
+using System;
 
 using Foundation;
 using AppKit;

@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="DSGridCellView.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using Android.Content;
 using Android.Util;

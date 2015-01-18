@@ -1,4 +1,11 @@
-﻿using System;
+// ****************************************************************************
+// <copyright file="DSTextFieldView.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
+using System;
 using AppKit;
 using DSoft.Datatypes.UI.Interfaces;
 

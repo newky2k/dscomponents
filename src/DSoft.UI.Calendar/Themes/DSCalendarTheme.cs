@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="DSCalendarTheme.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using MonoTouch.UIKit;
 using System.Drawing;

@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="EnumHelper.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using DSoft.Datatypes.Calendar;
 using DSoft.Datatypes.Calendar.Enums;

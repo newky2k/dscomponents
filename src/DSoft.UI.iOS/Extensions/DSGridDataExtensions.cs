@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="DSGridDataExtensions.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using System.Data;
 using DSoft.Datatypes.Grid.Data;

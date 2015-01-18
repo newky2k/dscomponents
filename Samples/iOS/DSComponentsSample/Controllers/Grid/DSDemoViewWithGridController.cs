@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="DSDemoViewWithGridController.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using DSoft.UI.Grid;
 using DSComponentsSample.Data.Grid;

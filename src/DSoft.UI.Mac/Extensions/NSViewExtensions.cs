@@ -1,4 +1,11 @@
-﻿using System;
+// ****************************************************************************
+// <copyright file="NSViewExtensions.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
+using System;
 using AppKit;
 
 namespace DSoft.UI.Mac.Extensions

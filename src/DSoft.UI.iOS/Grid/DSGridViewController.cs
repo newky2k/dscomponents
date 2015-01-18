@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="DSGridViewController.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using DSoft.UI.Grid.Views;
 using DSoft.Datatypes.Grid.Data.Interfaces;

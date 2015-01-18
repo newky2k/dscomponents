@@ -1,4 +1,11 @@
-﻿using System;
+// ****************************************************************************
+// <copyright file="IDSGridCellView.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
+using System;
 using DSoft.Datatypes.Grid.Shared;
 
 namespace DSoft.Datatypes.Grid.Interfaces

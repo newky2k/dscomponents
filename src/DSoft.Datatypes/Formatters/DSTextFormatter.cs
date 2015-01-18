@@ -1,3 +1,10 @@
+// ****************************************************************************
+// <copyright file="DSTextFormatter.cs" company="DSoft Developments">
+//    Created By David Humphreys
+//    Copyright © David Humphreys 2015
+// </copyright>
+// ****************************************************************************
+
 using System;
 using DSoft.Datatypes.Base;
 using DSoft.Datatypes.Enums;
