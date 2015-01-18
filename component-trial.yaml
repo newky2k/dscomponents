@@ -8,23 +8,24 @@ icons:
   - component/dsgridview_128x128.png
   - component/dsgridview_512x512.png
 publisher-url: http://www.dsoftonline.com
-src-url: https://github.com/newky2k/dscomponents
+src-url: http://www.dsoftonline.com/components/dsgridview
+trial: true
 libraries: 
   ios-unified: 
     - src/DSoft.Datatypes/bin/Release/DSoft.Datatypes.dll
     - src/DSoft.Datatypes.Grid/bin/Release/DSoft.Datatypes.Grid.dll
     - src/DSoft.Themes/bin/Release/DSoft.Themes.dll
-    - src/DSoft.UI.iOS/bin/unified/Release/DSoft.UI.dll
+    - src/DSoft.UI.iOS/bin/unified/ReleaseTrial/DSoft.UI.dll
   ios: 
     - src/DSoft.Datatypes/bin/Release/DSoft.Datatypes.dll
     - src/DSoft.Datatypes.Grid/bin/Release/DSoft.Datatypes.Grid.dll
     - src/DSoft.Themes/bin/Release/DSoft.Themes.dll  
-    - src/DSoft.UI.iOS/bin/classic/Release/DSoft.UI.dll  
+    - src/DSoft.UI.iOS/bin/classic/ReleaseTrial/DSoft.UI.dll  
   android: 
     - src/DSoft.Datatypes/bin/Release/DSoft.Datatypes.dll
     - src/DSoft.Datatypes.Grid/bin/Release/DSoft.Datatypes.Grid.dll
     - src/DSoft.Themes/bin/Release/DSoft.Themes.dll  
-    - src/DSoft.UI.Android/bin/Release/DSoft.UI.Android.dll
+    - src/DSoft.UI.Android/bin/ReleaseTrial/DSoft.UI.Android.dll
 summary: A lightweight and simple-to-use data grid for iPhone and iPad
 details: component/Details.md
 screenshots: 
@@ -32,14 +33,10 @@ screenshots:
   - component/screenshots/Screen2.png
   - component/screenshots/Screen3.png
 getting-started: component/GettingStarted.md
-<<<<<<< HEAD
-version: "3.0.2"
-=======
 version: 3.0.1
->>>>>>> FETCH_HEAD
 build:
   - path: src/DSComponents.sln
-    configuration: "Release"
+    configuration: "ReleaseTrial"
 samples: 
   - name: "iOS Sample"
     path: samples/iOS/DSComponentsSample.sln
