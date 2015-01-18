@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DSoft.UI</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>3.0</ReleaseVersion>
+    <ReleaseVersion>2.6</ReleaseVersion>
     <AssemblyName>DSoft.UI</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

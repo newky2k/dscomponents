@@ -464,21 +464,6 @@ namespace DSoft.UI.Grid
 		#region Private Properties
 
 		/// <summary>
-		/// Gets a value indicating whether this instance is trial.
-		/// </summary>
-		/// <value><c>true</c> if this instance is trial; otherwise, <c>false</c>.</value>
-		private bool IsTrial {
-			get
-			{
-#if TRIAL 
-				return true;
-#else
-				return false;
-#endif
-			}
-		}
-
-		/// <summary>
 		/// Gets the processor.
 		/// </summary>
 		/// <value>The processor.</value>
@@ -808,9 +793,6 @@ namespace DSoft.UI.Grid
 		/// <param name="sender">Sender.</param>
 		public void HandleOnRowDoubleSelect (IDSGridRowView sender)
 		{
-			if (IsTrial)
-				HandleTrialTap ();
-
 			if (sender.Processor.RowIndex > -1)
 			{
 				OnRowDoubleTapped (sender, sender.Processor.RowIndex);
@@ -823,9 +805,6 @@ namespace DSoft.UI.Grid
 		/// <param name="sender">Sender.</param>
 		public void HandleOnRowSingleSelect (IDSGridRowView sender)
 		{
-			if (IsTrial)
-				HandleTrialTap ();
-
 			if (sender.Processor.RowIndex >= 0)
 			{
 							

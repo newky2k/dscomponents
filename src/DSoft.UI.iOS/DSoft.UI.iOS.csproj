@@ -34,13 +34,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial|AnyCPU' ">
-    <Optimize>false</Optimize>
-    <OutputPath>bin\unified\ReleaseTrial</OutputPath>
-    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>TRIAL</DefineConstants>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />

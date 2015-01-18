@@ -21,17 +21,4 @@ task :default => ".xpkg/xamarin-component.exe" do
 	puts "* Created DSGridView Component"
 end
 
-task :default => ".xpkg/xamarin-component.exe" do
-	puts "* Creating DSGridView Component Trial"
-	sh "mv component.yaml component-full.yaml"
-	sh "mv component-trial.yaml component.yaml"
-	line = <<-END
-	mono .xpkg/xamarin-component.exe package
-		END
-	puts line.strip.gsub "\t\t", "\\\n    "
-	sh line, :verbose => false
-	sh "mv component.yaml component-trial.yaml"
-	sh "mv component-full.yaml component.yaml"
-	puts "* Created DSGridView Component"
-end
 
