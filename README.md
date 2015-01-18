@@ -274,8 +274,3 @@ If you like DSGridView then please leave feedback on the Xamarin component store
 
 If you have any questions, suggestions or feedback please feel free to contact us via email: gridview at dsoftonline.com or check out our website: http://www.dsoftonline.com
 
-### Trial
-
-The trial is fully functionally however a popup message is shown on the first touch of a row and then every five subsequent touches.  The full version has this restriction removed.
-
-Screenshots created with [PlaceIt](http://placeit.breezi.com/) and may contain simulated functionality not included in the DSGridView.
