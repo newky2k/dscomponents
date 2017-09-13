@@ -235,13 +235,13 @@ namespace DSComponentsSample.Data.Grid
         /// <param name="isSelected">If set to <c>true</c> is selected.</param>
         public override DSColor GetCellBackgroundColor(int RowIndex, string ColumnName, bool isSelected)
         {
-			if (RowIndex == -1)
-				return DSColor.Green;
+			//if (RowIndex == -1) //header row
+				//return DSColor.Green;
             
-            if (isSelected)
-                return DSColor.Red;
+            //if (isSelected) //return different color for selected cells
+                //return DSColor.Red;
 
-            return null;
+            return null; //use the default theme color
         }
 
         /// <summary>
@@ -253,14 +253,14 @@ namespace DSComponentsSample.Data.Grid
         /// <param name="isSelected">If set to <c>true</c> is selected.</param>
         public override DSColor GetCellForegroundColor(int RowIndex, string ColumnName, bool isSelected)
         {
-            if (RowIndex == -1)
-                return DSColor.Purple;
+            //if (RowIndex == -1) //header row
+				//return DSColor.Purple;
             
-			if (isSelected)
-				return DSColor.Yellow;
+			//if (isSelected) //return different color for selected cells
+				//return DSColor.Yellow;
 
-			return null;
-        }
+			return null; //use the default theme color
+		}
 	}
 }
 

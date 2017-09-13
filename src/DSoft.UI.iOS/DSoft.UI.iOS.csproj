@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DSoft.UI</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>2.6</ReleaseVersion>
+    <ReleaseVersion>3.0</ReleaseVersion>
     <AssemblyName>DSoft.UI</AssemblyName>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>

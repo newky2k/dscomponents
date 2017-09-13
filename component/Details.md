@@ -6,8 +6,7 @@ DSGridView is a fast lightweight and customisable data grid component for all yo
     * Can be set globally or for each instance of DSGridView   
     * Cross-platform for use across supported platforms  
     * Easy to implement your own themes or override elements of the default ones   
-* Works on iOS (Classic and Unified) and Android (Beta)  
-    * Windows Phone support in development  
+* Works on Xamarin.iOS and Xamarin.Android (Beta)  
 * Cross-plafrom support for Datasources    
 * High performance loading and rendering - 100,000 records as quick as 20
 * Low memory footprint
@@ -263,19 +262,9 @@ Once the grid is created you can register for the selection events
 	}
 
 
-### Windows Phone
-
-We have just completed a major piece of work to transform the existing solution in to more portable and cross-platform codebase.  This has benefits for not just us, but for you as well by making as much of your code reusable across platforms as possible.
-
-Work on windows phone will start shortly, once Android exists beta
-
 ### Contact Us  
 If you like DSGridView then please leave feedback on the Xamarin component store.
 
 If you have any questions, suggestions or feedback please feel free to contact us via email: gridview at dsoftonline.com or check out our website: http://www.dsoftonline.com
-
-### Trial
-
-The trial is fully functionally however a popup message is shown on the first touch of a row and then every five subsequent touches.  The full version has this restriction removed.
 
 Screenshots created with [PlaceIt](http://placeit.breezi.com/) and may contain simulated functionality not included in the DSGridView.

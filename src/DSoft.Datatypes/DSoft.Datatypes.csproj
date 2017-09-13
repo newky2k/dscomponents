@@ -11,7 +11,7 @@
     <RootNamespace>DSoft.Datatypes</RootNamespace>
     <AssemblyName>DSoft.Datatypes</AssemblyName>
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
-    <ReleaseVersion>2.6</ReleaseVersion>
+    <ReleaseVersion>3.0</ReleaseVersion>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

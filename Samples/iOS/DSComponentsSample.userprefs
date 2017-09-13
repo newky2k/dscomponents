@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="DSComponentsSample/Data/Grid/ExampleDataTable.cs">
     <Files>
       <File FileName="../../src/DSoft.UI.iOS/Grid/Views/DSGridCellView.cs" Line="399" Column="29" />
-      <File FileName="DSComponentsSample/Data/Grid/ExampleDataTable.cs" Line="229" Column="1" />
+      <File FileName="DSComponentsSample/Data/Grid/ExampleDataTable.cs" Line="259" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="DebugiOS|iPhoneSimulator" />

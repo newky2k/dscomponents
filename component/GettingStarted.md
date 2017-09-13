@@ -108,6 +108,8 @@ If you want to use your own collection then you will need to override the follow
 * GetValue (int RowIndex, string ColumnName)
 * SetValue (int RowIndex, string ColumnName, object Value)
 * SortByColumn(int ColumnIndex)
+* GetCellBackgroundColor
+* GetCellForegroundColor
 
 This will allow the Grid to load super quick and worry about loading the data when needed.
 
@@ -163,6 +165,30 @@ This will allow the Grid to load super quick and worry about loading the data wh
 
 			return aRow;
 		}		
+		
+		
+        public override DSColor GetCellBackgroundColor(int RowIndex, string ColumnName, bool isSelected)
+        {
+			if (RowIndex == -1) //header row
+				return DSColor.Green;
+            
+            if (isSelected) //return color for selected
+                return DSColor.Red;
+
+            return null; //use default color for the cell
+
+        }
+
+        public override DSColor GetCellForegroundColor(int RowIndex, string ColumnName, bool isSelected)
+        {
+            if (RowIndex == -1) //header row
+                return DSColor.Purple;
+            
+			if (isSelected)//return color for selected
+				return DSColor.Yellow;
+
+			return null; //use default color for the cell
+        }
 		
 	}
 
@@ -627,6 +653,11 @@ To set the formatter on the DSDataColumn object instantiate the required formatt
 If you have any questions, suggestions of feed back please feel free to contact us via email: gridview  at dsoftonline.com or check out our website: http://www.dsoftonline.com
 
 ## Revision History
+
+**3.1**  
+
+ * Added support for setting the cell backfround and foreground colors from the `DSDataTable` using `GetCellBackgroundColor` and `GetCellForegroundColor`
+    
 **3.0**  
 
  * Added Android Support  
