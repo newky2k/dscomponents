@@ -302,5 +302,6 @@ namespace DSoft.Datatypes.Enums
 		/// </summary>
 		Bottom,
 	}
+
 }
 

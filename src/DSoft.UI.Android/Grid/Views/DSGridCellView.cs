@@ -67,6 +67,8 @@ namespace DSoft.UI.Grid.Views
 
 								var backColor = DSColor.Clear;
 
+                                var bkColor = Processor.CellBackgroundColor;
+
 								switch (Processor.Style)
 								{
 									case CellStyle.Blank:
@@ -76,48 +78,73 @@ namespace DSoft.UI.Grid.Views
 										break;
 									case CellStyle.Cell:
 										{
-											if (Processor.IsSelected)
+											if (bkColor != null)
 											{
-												backColor = GridView.Theme.CellBackgroundHighlight;
-
+												backColor = bkColor;
 											}
 											else
 											{
-												var alterColor = (GridView.Theme.CellBackground2 != null) ? GridView.Theme.CellBackground2
-													: GridView.Theme.CellBackground;
-												backColor = (Processor.IsOdd) ? GridView.Theme.CellBackground : alterColor;
+												if (Processor.IsSelected)
+												{
+													backColor = GridView.Theme.CellBackgroundHighlight;
+
+												}
+												else
+												{
+													var alterColor = (GridView.Theme.CellBackground2 != null) ? GridView.Theme.CellBackground2
+														: GridView.Theme.CellBackground;
+													backColor = (Processor.IsOdd) ? GridView.Theme.CellBackground : alterColor;
+												}
 											}
 										}
 										break;
 									case CellStyle.Header:
 										{
-											backColor = GridView.Theme.HeaderBackground;
+											if (bkColor != null)
+											{
+												backColor = bkColor;
+											}
+											else
+											{
+												backColor = GridView.Theme.HeaderBackground;
+											}
 										}
 										break;
 								}
 
 								this.SetBackgroundColor (backColor.ToAndroidColor());
 
+                                var fgColor = Processor.CellForegroundColor;
+
 								if (mContentView != null && mContentView is TextView)
 								{
 									var label = mContentView as TextView;
 
-									if (Processor.Style == CellStyle.Header)
-									{
-										//label.TextAlignment = (UITextAlignment)GridView.Theme.HeaderTextAlignment;
-										label.SetTextColor(GridView.Theme.HeaderTextForeground.ToAndroidColor ());
-									}
-									else
-									{
-										var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToAndroidColor ()
-											: GridView.Theme.CellTextForeground.ToAndroidColor ();
-										var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToAndroidColor () : alterColor;
+                                    if (fgColor != null)
+                                    {
+                                        label.SetTextColor(fgColor.ToAndroidColor());
+                                    }
+                                    else
+                                    {
+										if (Processor.Style == CellStyle.Header)
+										{
+											//label.TextAlignment = (UITextAlignment)GridView.Theme.HeaderTextAlignment;
+											label.SetTextColor(GridView.Theme.HeaderTextForeground.ToAndroidColor());
+										}
+										else
+										{
+											var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToAndroidColor()
+												: GridView.Theme.CellTextForeground.ToAndroidColor();
+											var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToAndroidColor() : alterColor;
 
 
-										label.SetTextColor((Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToAndroidColor () : aColor);
+											label.SetTextColor((Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToAndroidColor() : aColor);
 
-										//label.TextAlignment = (UITextAlignment)boolFormatter.TextAlignment;
-									}
+											//label.TextAlignment = (UITextAlignment)boolFormatter.TextAlignment;
+										}
+                                    }
+
+	
 										
 								}
 							});
@@ -204,6 +231,8 @@ namespace DSoft.UI.Grid.Views
 
 			var backColor = DSColor.Clear;
 
+            var bkColor = Processor.CellBackgroundColor;
+
 			switch (Processor.Style)
 			{
 				case CellStyle.Blank:
@@ -213,22 +242,37 @@ namespace DSoft.UI.Grid.Views
 					break;
 				case CellStyle.Cell:
 					{
-						if (Processor.IsSelected)
-						{
-							backColor = GridView.Theme.CellBackgroundHighlight;
+                        if (bkColor != null)
+                        {
+                            backColor = bkColor;
+                        }
+                        else
+                        {
+							if (Processor.IsSelected)
+							{
+								backColor = GridView.Theme.CellBackgroundHighlight;
 
-						}
-						else
-						{
-							var alterColor = (GridView.Theme.CellBackground2 != null) ? GridView.Theme.CellBackground2
-								: GridView.Theme.CellBackground;
-							backColor = (Processor.IsOdd) ? GridView.Theme.CellBackground : alterColor;
-						}
+							}
+							else
+							{
+								var alterColor = (GridView.Theme.CellBackground2 != null) ? GridView.Theme.CellBackground2
+									: GridView.Theme.CellBackground;
+								backColor = (Processor.IsOdd) ? GridView.Theme.CellBackground : alterColor;
+							}
+                        }
+
 					}
 					break;
 				case CellStyle.Header:
 					{
-						backColor = GridView.Theme.HeaderBackground;
+                        if (bkColor != null)
+                        {
+                            backColor = bkColor;
+                        }
+                        else
+                        {
+                            backColor = GridView.Theme.HeaderBackground;
+                        }
 					}
 					break;
 			}
@@ -253,7 +297,7 @@ namespace DSoft.UI.Grid.Views
 
 					viewFormatter.View.Value = Processor.ValueObject.Value;
 
-					var lp = new LinearLayout.LayoutParams (LayoutParams.WrapContent, LayoutParams.FillParent);
+					var lp = new LinearLayout.LayoutParams (LayoutParams.WrapContent, LayoutParams.MatchParent);
 
 					if (Processor.Formatter.Size != null)
 					{
@@ -291,7 +335,7 @@ namespace DSoft.UI.Grid.Views
 
 					imgView.SetImageBitmap(image);
 
-					var lp = new LinearLayout.LayoutParams (LayoutParams.WrapContent, LayoutParams.FillParent);
+					var lp = new LinearLayout.LayoutParams (LayoutParams.WrapContent, LayoutParams.MatchParent);
 
 					if (Processor.Formatter.Size != null)
 					{
@@ -336,7 +380,7 @@ namespace DSoft.UI.Grid.Views
 					if (boolFormatter.Style == BooleanFormatterStyle.Text)
 					{
 						var label = new TextView (this.Context);
-						var lp = new LinearLayout.LayoutParams (LayoutParams.WrapContent, LayoutParams.FillParent);
+						var lp = new LinearLayout.LayoutParams (LayoutParams.WrapContent, LayoutParams.MatchParent);
 						lp.Gravity = GravityFlags.DisplayClipHorizontal;
 
 						label.LayoutParameters = lp;
@@ -352,21 +396,32 @@ namespace DSoft.UI.Grid.Views
 
 						TextAlignment textAlign;
 
+                        var fgColor = Processor.CellForegroundColor;
 
 						if (Processor.Style == CellStyle.Header)
 						{
 							textAlign = GridView.Theme.HeaderTextAlignment;
-							label.SetTextColor(GridView.Theme.HeaderTextForeground.ToAndroidColor ());
+
+							if (fgColor != null)
+								label.SetTextColor(fgColor.ToAndroidColor());
+							else
+								label.SetTextColor(GridView.Theme.HeaderTextForeground.ToAndroidColor ());
 						}
 						else
 						{
-							var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToAndroidColor ()
-								: GridView.Theme.CellTextForeground.ToAndroidColor ();
-							var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToAndroidColor () : alterColor;
+                            if (fgColor != null)
+                            {
+                                label.SetTextColor(fgColor.ToAndroidColor());
+                            }
+                            else
+                            {
+                                var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToAndroidColor()
+                                    : GridView.Theme.CellTextForeground.ToAndroidColor();
+                                var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToAndroidColor() : alterColor;
 
 
-							label.SetTextColor((Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToAndroidColor () : aColor);
-
+                                label.SetTextColor((Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToAndroidColor() : aColor);
+                            }
 							textAlign = boolFormatter.TextAlignment;
 						}
 
@@ -461,6 +516,7 @@ namespace DSoft.UI.Grid.Views
 
 					TextAlignment textAlign;
 
+                    var fgColor = Processor.CellForegroundColor;
 
 					if (Processor.Style == CellStyle.Header)
 					{
@@ -475,16 +531,25 @@ namespace DSoft.UI.Grid.Views
 
 						}
 
-
-						label.SetTextColor(GridView.Theme.HeaderTextForeground.ToAndroidColor ());
+                        if (fgColor != null)
+                            label.SetTextColor(fgColor.ToAndroidColor());
+                        else                            
+                            label.SetTextColor(GridView.Theme.HeaderTextForeground.ToAndroidColor ());
 					}
 					else
 					{
-						var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToAndroidColor () : GridView.Theme.CellTextForeground.ToAndroidColor ();
-						var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToAndroidColor () : alterColor;
+                        if (fgColor != null)
+                        {
+                            label.SetTextColor(fgColor.ToAndroidColor());
+                        }
+                        else
+                        {
+                            var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToAndroidColor() : GridView.Theme.CellTextForeground.ToAndroidColor();
+                            var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToAndroidColor() : alterColor;
 
-						label.SetTextColor((Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToAndroidColor () : aColor);
 
+                            label.SetTextColor((Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToAndroidColor() : aColor);
+                        }
 						textAlign = GridView.Theme.CellContentAlignment;
 
 						if (Processor.Formatter != null && Processor.Formatter is DSTextFormatter)

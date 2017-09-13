@@ -9,6 +9,7 @@ using System;
 using DSoft.Datatypes.Grid.Data.Interfaces;
 using DSoft.Datatypes.Grid.Data.Collections;
 using System.Collections.Generic;
+using DSoft.Datatypes.Types;
 
 namespace DSoft.Datatypes.Grid.Data
 {
@@ -168,6 +169,29 @@ namespace DSoft.Datatypes.Grid.Data
 			GetRow(RowIndex).Items[ColumnName].Value = Value;
 			//Rows [RowIndex].Items [ColumnName].Value = Value;
 		}
+
+        /// <summary>
+        /// Gets the cell background colour
+        /// </summary>
+        /// <returns>The background color, null by default</returns>
+        /// <param name="RowIndex">Row index.</param>
+        /// <param name="ColumnName">Column name.</param>
+        public virtual DSColor GetCellBackgroundColor(int RowIndex, String ColumnName, bool isSelected)
+        {
+            return null;
+        }
+
+		/// <summary>
+		/// Gets the cell foreground colour
+		/// </summary>
+		/// <returns>The foreground color, null by default</returns>
+		/// <param name="RowIndex">Row index.</param>
+		/// <param name="ColumnName">Column name.</param>
+		public virtual DSColor GetCellForegroundColor(int RowIndex, String ColumnName, bool isSelected)
+		{
+			return null;
+		}
+
 
 		/// <summary>
 		/// Return the index of the row with the matching ids

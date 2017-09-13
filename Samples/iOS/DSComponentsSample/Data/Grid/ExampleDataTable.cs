@@ -12,17 +12,10 @@ using DSoft.Datatypes.Enums;
 using DSoft.Datatypes.Types;
 using DSoft.Datatypes.Formatters;
 using DSComponentsSample.Views;
-
-#if __UNIFIED__
 using UIKit;
 using CoreGraphics;
 using Foundation;
-#else
-using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.Foundation;
-using System.Drawing;
-#endif
+
 
 namespace DSComponentsSample.Data.Grid
 {
@@ -232,6 +225,42 @@ namespace DSComponentsSample.Data.Grid
 		{
 			GetRow (RowIndex).Items [ColumnName].Value = Value;
 		}
+
+        /// <summary>
+        /// Gets the color of the cell background.
+        /// </summary>
+        /// <returns>The cell background color.</returns>
+        /// <param name="RowIndex">Row index.</param>
+        /// <param name="ColumnName">Column name.</param>
+        /// <param name="isSelected">If set to <c>true</c> is selected.</param>
+        public override DSColor GetCellBackgroundColor(int RowIndex, string ColumnName, bool isSelected)
+        {
+			if (RowIndex == -1)
+				return DSColor.Green;
+            
+            if (isSelected)
+                return DSColor.Red;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the color of the cell foreground.
+        /// </summary>
+        /// <returns>The cell foreground color.</returns>
+        /// <param name="RowIndex">Row index.</param>
+        /// <param name="ColumnName">Column name.</param>
+        /// <param name="isSelected">If set to <c>true</c> is selected.</param>
+        public override DSColor GetCellForegroundColor(int RowIndex, string ColumnName, bool isSelected)
+        {
+            if (RowIndex == -1)
+                return DSColor.Purple;
+            
+			if (isSelected)
+				return DSColor.Yellow;
+
+			return null;
+        }
 	}
 }
 

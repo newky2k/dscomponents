@@ -23,24 +23,10 @@ using DSoft.Datatypes.Grid.MetaData;
 using DSoft.Datatypes.Formatters;
 using DSoft.Datatypes.Grid.Shared;
 using DSoft.Datatypes.Grid.Interfaces;
-
-#if __UNIFIED__
 using UIKit;
 using CoreGraphics;
 using Foundation;
-#else
-using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.Foundation;
-using System.Drawing;
 
-using CGRect = global::System.Drawing.RectangleF;
-using CGPoint = global::System.Drawing.PointF;
-using CGSize = global::System.Drawing.SizeF;
-using nfloat = global::System.Single;
-using nint = global::System.Int32;
-using nuint = global::System.UInt32;
-#endif
 
 namespace DSoft.UI.Grid
 {

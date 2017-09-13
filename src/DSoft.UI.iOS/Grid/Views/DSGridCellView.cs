@@ -14,29 +14,11 @@ using DSoft.Themes.Grid;
 using DSoft.Datatypes.Formatters;
 using DSoft.Datatypes.Grid.Interfaces;
 using DSoft.Datatypes.Grid.Shared;
-
-
-
-#if __UNIFIED__
 using UIKit;
 using CoreGraphics;
 using Foundation;
 using ObjCRuntime;
-#else
-using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
 
-using System.Drawing;
-
-using CGRect = global::System.Drawing.RectangleF;
-using CGPoint = global::System.Drawing.PointF;
-using CGSize = global::System.Drawing.SizeF;
-using nfloat = global::System.Single;
-using nint = global::System.Int32;
-using nuint = global::System.UInt32;
-#endif
 
 namespace DSoft.UI.Grid.Views
 {
@@ -191,6 +173,8 @@ namespace DSoft.UI.Grid.Views
 
 			CGContext ctx = UIGraphics.GetCurrentContext ();
 
+            var bkColor = Processor.CellBackgroundColor;
+
 			switch (Processor.Style)
 			{
 				case CellStyle.Blank:
@@ -200,23 +184,41 @@ namespace DSoft.UI.Grid.Views
 					break;
 				case CellStyle.Cell:
 					{
-						if (Processor.IsSelected)
-						{
-							GridView.Theme.CellBackgroundHighlight.ToUIColor ().SetFill ();
+						
 
-						}
+						if (bkColor != null)
+                        {
+                            bkColor.ToUIColor().SetFill();
+                        }
 						else
-						{
-							var alterColor = (GridView.Theme.CellBackground2 != null) ? GridView.Theme.CellBackground2.ToUIColor () 
-						                 : GridView.Theme.CellBackground.ToUIColor ();
-							var aColor = (Processor.IsOdd) ? GridView.Theme.CellBackground.ToUIColor () : alterColor;
-							aColor.SetFill ();
-						}
+                        {
+							if (Processor.IsSelected)
+							{
+
+								GridView.Theme.CellBackgroundHighlight.ToUIColor().SetFill();
+
+							}
+							else
+							{
+								var alterColor = (GridView.Theme.CellBackground2 != null) ? GridView.Theme.CellBackground2.ToUIColor()
+											 : GridView.Theme.CellBackground.ToUIColor();
+								var aColor = (Processor.IsOdd) ? GridView.Theme.CellBackground.ToUIColor() : alterColor;
+								aColor.SetFill();
+							}
+                        }
+
 					}
 					break;
 				case CellStyle.Header:
 					{
-						GridView.Theme.HeaderBackground.ToUIColor ().SetFill ();
+                        if (bkColor != null)
+                        {
+                            bkColor.ToUIColor().SetFill();
+                        }
+                        else
+                        {
+                            GridView.Theme.HeaderBackground.ToUIColor().SetFill();
+                        }
 					}
 					break;
 			}
@@ -393,13 +395,25 @@ namespace DSoft.UI.Grid.Views
 						}
 						else
 						{
-							var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToUIColor ()
-						                 : GridView.Theme.CellTextForeground.ToUIColor ();
-							var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToUIColor () : alterColor;
-		
-							label.TextColor = (Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToUIColor () : aColor;
-		
-							label.TextAlignment = (UITextAlignment)boolFormatter.TextAlignment;
+                            //check to see if the color has been overridden in the datatable
+                            var fgColor = Processor.CellForegroundColor;
+
+                            if (fgColor != null)
+                            {
+                                label.TextColor = fgColor.ToUIColor();
+                            }
+                            else
+                            {
+								var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToUIColor() 
+                                                                                                        : GridView.Theme.CellTextForeground.ToUIColor();
+								var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToUIColor() : alterColor;
+
+								label.TextColor = (Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToUIColor() : aColor;
+
+								
+                            }
+
+                            label.TextAlignment = (UITextAlignment)boolFormatter.TextAlignment;
 						}
 						
 						mContentView = label;
@@ -471,6 +485,8 @@ namespace DSoft.UI.Grid.Views
 					label.Text = Processor.ValueObject.Value.ToString ();
 					label.LineBreakMode = UILineBreakMode.TailTruncation;
 
+                    var fgColor = Processor.CellForegroundColor;
+
 					if (Processor.Style == CellStyle.Header)
 					{
 						int numLines = Processor.ValueObject.Value.ToString ().Split ('\n').Length;
@@ -484,15 +500,33 @@ namespace DSoft.UI.Grid.Views
 
 						}
 						label.TextAlignment = (UITextAlignment)textAlignment;
-						label.TextColor = GridView.Theme.HeaderTextForeground.ToUIColor ();
+
+                        if (fgColor != null)
+                        {
+                            label.TextColor = fgColor.ToUIColor();
+                        }
+                        else
+                        {
+
+                            label.TextColor = GridView.Theme.HeaderTextForeground.ToUIColor();
+                        }
 					}
 					else
 					{
-						var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToUIColor () : GridView.Theme.CellTextForeground.ToUIColor ();
-						var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToUIColor () : alterColor;
-	
-						label.TextColor = (Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToUIColor () : aColor;
-	
+						//var fgColor = Processor.CellForegroundColor;
+
+                        if (fgColor != null)
+                        {
+                            label.TextColor = fgColor.ToUIColor();
+                        }
+                        else
+                        {
+							var alterColor = (GridView.Theme.CellTextForeground2 != null) ? GridView.Theme.CellTextForeground2.ToUIColor() : GridView.Theme.CellTextForeground.ToUIColor();
+							var aColor = (Processor.IsOdd) ? GridView.Theme.CellTextForeground.ToUIColor() : alterColor;
+
+							label.TextColor = (Processor.IsSelected) ? GridView.Theme.CellTextHighlight.ToUIColor() : aColor;
+                        }
+
 						var textAlignment = GridView.Theme.CellContentAlignment;
 
 						if (Processor.Formatter != null && Processor.Formatter is DSTextFormatter)

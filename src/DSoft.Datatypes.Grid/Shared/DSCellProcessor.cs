@@ -10,6 +10,7 @@ using DSoft.Datatypes.Enums;
 using DSoft.Datatypes.Grid.Interfaces;
 using DSoft.Datatypes.Grid.Data;
 using DSoft.Datatypes.Base;
+using DSoft.Datatypes.Types;
 
 namespace DSoft.Datatypes.Grid.Shared
 {
@@ -199,6 +200,34 @@ namespace DSoft.Datatypes.Grid.Shared
 				}
 
 				return mValue;
+			}
+		}
+
+        /// <summary>
+        /// Gets the color of the cell background.
+        /// </summary>
+        /// <value>The color of the cell background.</value>
+        public DSColor CellBackgroundColor
+        {
+            get
+            {
+                var aValue = mGridView.Processor.GetCellBackgroundColor(Index, this.ColumnName, IsSelected);
+
+                return aValue;
+            }
+        }
+
+        /// <summary>
+        /// Gets the color of the cell foreground.
+        /// </summary>
+        /// <value>The color of the cell foreground.</value>
+		public DSColor CellForegroundColor
+		{
+			get
+			{
+				var aValue = mGridView.Processor.GetCellForegroundColor(Index, this.ColumnName, IsSelected);
+
+				return aValue;
 			}
 		}
 

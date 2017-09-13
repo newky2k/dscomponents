@@ -544,6 +544,30 @@ namespace DSoft.Datatypes.Grid.Shared
 			}
 		}
 
+        /// <summary>
+        /// Gets the color of the cell background.
+        /// </summary>
+        /// <returns>The cell background color.</returns>
+        /// <param name="Index">Index.</param>
+        /// <param name="CellName">Cell name.</param>
+        /// <param name="isSelected">If set to <c>true</c> is selected.</param>
+		public DSColor GetCellBackgroundColor(int Index, String CellName, bool isSelected)
+		{
+			return CurrentTable.GetCellBackgroundColor(Index, CellName, isSelected);
+		}
+
+        /// <summary>
+        /// Gets the color of the cell foreground.
+        /// </summary>
+        /// <returns>The cell foreground color.</returns>
+        /// <param name="Index">Index.</param>
+        /// <param name="CellName">Cell name.</param>
+        /// <param name="isSelected">If set to <c>true</c> is selected.</param>
+		public DSColor GetCellForegroundColor(int Index, String CellName, bool isSelected)
+		{
+			return CurrentTable.GetCellForegroundColor(Index, CellName, isSelected);
+		}
+
 		/// <summary>
 		/// Sets the value for the row and column
 		/// </summary>
