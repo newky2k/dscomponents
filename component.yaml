@@ -15,11 +15,6 @@ libraries:
     - src/DSoft.Datatypes.Grid/bin/Release/DSoft.Datatypes.Grid.dll
     - src/DSoft.Themes/bin/Release/DSoft.Themes.dll
     - src/DSoft.UI.iOS/bin/unified/Release/DSoft.UI.dll
-  ios: 
-    - src/DSoft.Datatypes/bin/Release/DSoft.Datatypes.dll
-    - src/DSoft.Datatypes.Grid/bin/Release/DSoft.Datatypes.Grid.dll
-    - src/DSoft.Themes/bin/Release/DSoft.Themes.dll  
-    - src/DSoft.UI.iOS/bin/classic/Release/DSoft.UI.dll  
   android: 
     - src/DSoft.Datatypes/bin/Release/DSoft.Datatypes.dll
     - src/DSoft.Datatypes.Grid/bin/Release/DSoft.Datatypes.Grid.dll
@@ -32,7 +27,7 @@ screenshots:
   - component/screenshots/Screen2.png
   - component/screenshots/Screen3.png
 getting-started: component/GettingStarted.md
-version: "3.0.2"
+version: "3.1.0"
 build:
   - path: src/DSComponents.sln
     configuration: "Release"
@@ -40,10 +35,6 @@ samples:
   - name: "iOS Sample"
     path: samples/iOS/DSComponentsSample.sln
     configuration: "Release|iPhone"
-    nobuild: true
-  - name: "iOS Classic Sample"
-    path: samples/iOS/DSComponentsSample-Classic.sln
-    configuration: "Release|iPhone"        
     nobuild: true
   - name: "Android Sample"
     path: samples/Android/DSComponentsSample/DSComponentsSample-Android.sln
