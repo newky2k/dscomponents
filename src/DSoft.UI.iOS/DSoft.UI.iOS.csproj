@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,10 +11,20 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DSoft.UI</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>3.0</ReleaseVersion>
+    <ReleaseVersion>3.1.1</ReleaseVersion>
     <AssemblyName>DSoft.UI</AssemblyName>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>DSoft.DSGrid</PackageId>
+    <PackageVersion>3.1.1</PackageVersion>
+    <Authors>newky2k</Authors>
+    <PackageLicenseUrl>https://github.com/newky2k/dscomponents/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>newky2k</Owners>
+    <PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
+    <Summary>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Summary>
+    <Title>DSoft.DSGrid</Title>
+    <Description>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -81,5 +92,9 @@
     <BundleResource Include="Resources\checkmark.png" />
     <BundleResource Include="Resources\checkmark%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>

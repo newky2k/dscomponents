@@ -5,6 +5,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.DSoft.UI.Android PreferredExecutionTarget="Android.AVD_for_Nexus_4_by_Google" />
+  <MonoDevelop.Ide.ItemProperties.DSoft.UI.Android PreferredExecutionTarget="Android.Pixel_API_26" />
   <MultiItemStartupConfigurations />
 </Properties>
