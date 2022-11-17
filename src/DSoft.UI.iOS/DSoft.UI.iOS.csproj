@@ -2,14 +2,17 @@
 
   <PropertyGroup>
     <TargetFrameworks>Xamarin.iOS10;</TargetFrameworks>
-    <RootNamespace>DSoft.UI</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>3.1.1</ReleaseVersion>
-    <AssemblyName>DSoft.UI</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RootNamespace>DSoft.UI</RootNamespace>
+    <AssemblyName>DSoft.UI</AssemblyName>
     <PackageId>DSoft.DSGrid</PackageId>
     <PackageVersion>3.1.1</PackageVersion>
+    <Version>3.1.1</Version>
+    <AssemblyVersion>3.1.1</AssemblyVersion>
+    <FileVersion>3.1.1</FileVersion>
     <Authors>newky2k</Authors>
+    <Company>newky2k</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Owners>newky2k</Owners>
     <PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
@@ -38,7 +41,7 @@
     <None Remove="Resources\checkmark@2x.png" />
   </ItemGroup>
   <ItemGroup>
-       <None Include="..\..\readme.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\readme.md" Pack="true" PackagePath="\" />
     <BundleResource Include="Resources\checkmark.png" />
      <BundleResource Include="Resources\checkmark@2x.png" />
   </ItemGroup>
