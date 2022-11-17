@@ -11,6 +11,7 @@ using Android.Graphics.Drawables;
 using System.Drawing;
 using Android.Graphics;
 using System.IO;
+using ABitmap = Android.Graphics.Bitmap;
 
 /// <summary>
 /// Extension for DSTypes
@@ -64,11 +65,11 @@ public static class DSTypeExtensions
 	/// </summary>
 	/// <returns>The DS bitmap.</returns>
 	/// <param name="bmp">Bmp.</param>
-	public static DSBitmap ToDSBitmap(this Bitmap bmp)
+	public static DSBitmap ToDSBitmap(this ABitmap bmp)
 	{
 		var stream = new MemoryStream();
 
-		bmp.Compress(Bitmap.CompressFormat.Png, 100, stream);
+		bmp.Compress(ABitmap.CompressFormat.Png, 100, stream);
 
 		byte[] byteArray = stream.ToArray();
 
@@ -81,7 +82,7 @@ public static class DSTypeExtensions
 	/// </summary>
 	/// <returns>The bitmap.</returns>
 	/// <param name="bmp">Bmp.</param>
-	public static Bitmap ToBitmap(this DSBitmap bmp)
+	public static ABitmap ToBitmap(this DSBitmap bmp)
 	{
 		return BitmapFactory.DecodeByteArray(bmp.ImageData, 0, bmp.ImageData.Length);
 	}

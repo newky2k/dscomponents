@@ -20,6 +20,7 @@ using DSoft.Datatypes.Formatters;
 using Android.OS;
 using System.Threading;
 using Android.App;
+using DSTextAlignment = DSoft.Datatypes.Enums.TextAlignment;
 
 namespace DSoft.UI.Grid.Views
 {
@@ -394,7 +395,7 @@ namespace DSoft.UI.Grid.Views
 						label.Ellipsize = TextUtils.TruncateAt.End;
 
 
-						TextAlignment textAlign;
+                        DSTextAlignment textAlign;
 
                         var fgColor = Processor.CellForegroundColor;
 
@@ -430,12 +431,12 @@ namespace DSoft.UI.Grid.Views
 
 						switch (textAlign)
 						{
-							case TextAlignment.Middle:
+							case DSTextAlignment.Middle:
 								{
 									gavFlags = GravityFlags.CenterVertical | GravityFlags.CenterHorizontal;
 								}
 								break;
-							case TextAlignment.Right:
+							case DSTextAlignment.Right:
 								{
 									gavFlags = GravityFlags.CenterVertical | GravityFlags.Right;
 								}
@@ -514,7 +515,7 @@ namespace DSoft.UI.Grid.Views
 					label.Ellipsize = TextUtils.TruncateAt.End;
 
 
-					TextAlignment textAlign;
+                    DSTextAlignment textAlign;
 
                     var fgColor = Processor.CellForegroundColor;
 
@@ -565,12 +566,12 @@ namespace DSoft.UI.Grid.Views
 
 					switch (textAlign)
 					{
-						case TextAlignment.Middle:
+						case DSTextAlignment.Middle:
 							{
 								gavFlags = GravityFlags.CenterVertical | GravityFlags.CenterHorizontal;
 							}
 							break;
-						case TextAlignment.Right:
+						case DSTextAlignment.Right:
 							{
 								gavFlags = GravityFlags.CenterVertical | GravityFlags.Right;
 							}

@@ -15,7 +15,7 @@ namespace DSoft.UI
 {
 	
 	
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
 	public partial class Resource
 	{
 		
@@ -40,8 +40,8 @@ namespace DSoft.UI
 		public partial class Drawable
 		{
 			
-			// aapt resource value: 0x7f020000
-			public static int checkmark = 2130837504;
+			// aapt resource value: 0x7F010000
+			public static int checkmark = 2130771968;
 			
 			static Drawable()
 			{
@@ -56,8 +56,8 @@ namespace DSoft.UI
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f030000
-			public static int library_name = 2130903040;
+			// aapt resource value: 0x7F020000
+			public static int library_name = 2130837504;
 			
 			static String()
 			{
