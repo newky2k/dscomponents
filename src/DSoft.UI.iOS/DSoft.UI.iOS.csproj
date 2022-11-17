@@ -6,16 +6,20 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <ReleaseVersion>3.1.1</ReleaseVersion>
     <AssemblyName>DSoft.UI</AssemblyName>
-    <PackOnBuild>true</PackOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DSoft.DSGrid</PackageId>
     <PackageVersion>3.1.1</PackageVersion>
     <Authors>newky2k</Authors>
-    <PackageLicenseUrl>https://github.com/newky2k/dscomponents/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Owners>newky2k</Owners>
     <PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <Summary>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Summary>
     <Title>DSoft.DSGrid</Title>
     <Description>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Description>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <Copyright>Copyright © 2022 DSoft</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj" />
@@ -34,6 +38,7 @@
     <None Remove="Resources\checkmark@2x.png" />
   </ItemGroup>
   <ItemGroup>
+       <None Include="..\..\readme.md" Pack="true" PackagePath="\" />
     <BundleResource Include="Resources\checkmark.png" />
      <BundleResource Include="Resources\checkmark@2x.png" />
   </ItemGroup>

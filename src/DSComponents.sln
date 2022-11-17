@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSoft.UI.iOS", "DSoft.UI.iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSoft.UI.Android", "DSoft.UI.Android\DSoft.UI.Android.csproj", "{E8132057-93D8-4FD0-9EBC-2E81E3409E6D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".ci", ".ci", "{572E36BC-901E-44BF-9CFB-98457D63242F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
