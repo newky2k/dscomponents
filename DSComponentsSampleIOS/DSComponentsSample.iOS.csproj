@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>DSComponentsSample</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>2.6</ReleaseVersion>
+    <ReleaseVersion>3.1.1</ReleaseVersion>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -31,6 +31,8 @@
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>i386, x86_64</MtouchArch>
+    <CodesignProvision>Automatic</CodesignProvision>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -64,6 +66,7 @@
     </MtouchI18n>
     <MtouchArch>ARMv7, ARMv7s</MtouchArch>
     <AssemblyName>DSComponentsSample</AssemblyName>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -154,21 +157,21 @@
     <Folder Include="Formatters\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\DSoft.Datatypes\DSoft.Datatypes.csproj">
-      <Project>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</Project>
-      <Name>DSoft.Datatypes</Name>
+    <ProjectReference Include="..\DSoft.UI.iOS\DSoft.UI.iOS.csproj">
+      <Project>{792E63A8-59BC-4C4C-B033-E4376B5CECC2}</Project>
+      <Name>DSoft.UI.iOS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\src\DSoft.Themes\DSoft.Themes.csproj">
+    <ProjectReference Include="..\DSoft.Themes\DSoft.Themes.csproj">
       <Project>{52C0D9D1-737D-4AB5-8D19-0A31798870CA}</Project>
       <Name>DSoft.Themes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\src\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj">
+    <ProjectReference Include="..\DSoft.Datatypes\DSoft.Datatypes.csproj">
+      <Project>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</Project>
+      <Name>DSoft.Datatypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj">
       <Project>{7E3547A7-4292-42E9-A509-71D50DCF157F}</Project>
       <Name>DSoft.Datatypes.Grid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\src\DSoft.UI.iOS\DSoft.UI.iOS.csproj">
-      <Project>{792E63A8-59BC-4C4C-B033-E4376B5CECC2}</Project>
-      <Name>DSoft.UI.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

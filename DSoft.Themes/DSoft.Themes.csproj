@@ -1,43 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net6.0;</TargetFrameworks>
-    <RootNamespace>DSoft.Themes</RootNamespace>
-    <AssemblyName>DSoft.Themes</AssemblyName>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>DSoft.Themes</Title>
-    <PackageId>DSoft.Themes</PackageId>
-    <PackageVersion>3.1.1</PackageVersion>
-    <Version>3.1.1</Version>
-    <AssemblyVersion>3.1.1</AssemblyVersion>
-    <FileVersion>3.1.1</FileVersion>
-    <Authors>newky2k</Authors>
-    <Company>newky2k</Company>
-    <Owners>newky2k</Owners>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <Summary>Themeing library for DSoft.Componenents</Summary>
-    <Description>Themeing library for DSoft.Componenents</Description>
-    <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <Copyright>Copyright © 2022 DSoft</Copyright>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\readme.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Remove="Resources\downArrow.png" />
-    <None Remove="Resources\upArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\downArrow.png" />
-    <EmbeddedResource Include="Resources\upArrow.png" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj" />
-  </ItemGroup>
-
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net6.0;</TargetFrameworks>
+		<RootNamespace>DSoft.Themes</RootNamespace>
+		<AssemblyName>DSoft.Themes</AssemblyName>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>DSoft.Themes</Title>
+		<PackageId>DSoft.Themes</PackageId>
+		<PackageVersion>3.1.1</PackageVersion>
+		<Version>3.1.1</Version>
+		<AssemblyVersion>3.1.1</AssemblyVersion>
+		<FileVersion>3.1.1</FileVersion>
+		<Authors>newky2k</Authors>
+		<Company>newky2k</Company>
+		<Owners>newky2k</Owners>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Summary>Themeing library for DSoft.Componenents</Summary>
+		<Description>Themeing library for DSoft.Componenents</Description>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<Copyright>Copyright © 2022 DSoft</Copyright>
+		<ReleaseVersion>3.1.1</ReleaseVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="Resources\downArrow.png" />
+		<None Remove="Resources\upArrow.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\downArrow.png" />
+		<EmbeddedResource Include="Resources\upArrow.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj" />
+	</ItemGroup>
 </Project>
