@@ -22,7 +22,7 @@
 		<Title>DSoft.DSGrid</Title>
 		<Description>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Description>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<Copyright>Copyright © 2022 DSoft</Copyright>
+		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
 		<ReleaseVersion>3.2.0</ReleaseVersion>
 	</PropertyGroup>
 	<ItemGroup>

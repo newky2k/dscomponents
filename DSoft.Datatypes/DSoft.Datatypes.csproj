@@ -7,10 +7,10 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>DSoft.Datatypes</Title>
 		<PackageId>DSoft.Datatypes</PackageId>
-		<PackageVersion>3.1.1</PackageVersion>
-		<Version>3.1.1</Version>
-		<AssemblyVersion>3.1.1</AssemblyVersion>
-		<FileVersion>3.1.1</FileVersion>
+		<PackageVersion>3.2.0</PackageVersion>
+		<Version>3.2.0</Version>
+		<AssemblyVersion>3.2.0</AssemblyVersion>
+		<FileVersion>3.2.0</FileVersion>
 		<Authors>newky2k</Authors>
 		<Company>newky2k</Company>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -21,8 +21,8 @@
 		<Summary>Datatypes library for DSoft.Componenents</Summary>
 		<Description>Datatypes library for DSoft.Componenents</Description>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<Copyright>Copyright © 2022 DSoft</Copyright>
-		<ReleaseVersion>3.1.1</ReleaseVersion>
+		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
+		<ReleaseVersion>3.2.0</ReleaseVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\readme.md" Pack="true" PackagePath="\" />
