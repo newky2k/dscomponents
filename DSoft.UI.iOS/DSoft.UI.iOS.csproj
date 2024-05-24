@@ -7,7 +7,6 @@
 		<RootNamespace>DSoft.UI</RootNamespace>
 		<AssemblyName>DSoft.UI</AssemblyName>
 		<PackageId>DSoft.DSGrid</PackageId>
-		<PackageVersion>3.2.0</PackageVersion>
 		<Version>3.2.0</Version>
 		<AssemblyVersion>3.2.0</AssemblyVersion>
 		<FileVersion>3.2.0</FileVersion>
@@ -23,15 +22,7 @@
 		<Description>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Description>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
-		<ReleaseVersion>3.2.0</ReleaseVersion>
 	</PropertyGroup>
-
-	<ItemGroup Condition=" '$(TargetFramework)' == 'Xamarin.iOS10' ">
-		<Reference Include="System" />
-		<Reference Include="System.Xml" />
-		<Reference Include="System.Core" />
-		<Reference Include="System.Data" />
-	</ItemGroup>
 	
 	<ItemGroup>
 		<ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj" />

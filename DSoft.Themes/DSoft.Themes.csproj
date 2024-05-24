@@ -7,7 +7,6 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>DSoft.Themes</Title>
 		<PackageId>DSoft.Themes</PackageId>
-		<PackageVersion>3.2.0</PackageVersion>
 		<Version>3.2.0</Version>
 		<AssemblyVersion>3.2.0</AssemblyVersion>
 		<FileVersion>3.2.0</FileVersion>
@@ -22,7 +21,6 @@
 		<Description>Themeing library for DSoft.Components</Description>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
-		<ReleaseVersion>3.2.0</ReleaseVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\readme.md" Pack="true" PackagePath="\" />
