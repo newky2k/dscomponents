@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>Xamarin.iOS10;net8-ios</TargetFrameworks>
+		<TargetFrameworks>net8-ios</TargetFrameworks>
 		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<RootNamespace>DSoft.UI</RootNamespace>
