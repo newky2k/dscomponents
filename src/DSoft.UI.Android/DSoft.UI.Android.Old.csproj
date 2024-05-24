@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8132057-93D8-4FD0-9EBC-2E81E3409E6D}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DSoft.UI</RootNamespace>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>DSoft.UI.Android</AssemblyName>
+    <ReleaseVersion>3.1.1</ReleaseVersion>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DocumentationFile>bin\Release\DSoft.UI.Android.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\ReleaseTrial</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DefineConstants>__MOBILE__;__ANDROID__;TRIAL</DefineConstants>
+    <DocumentationFile>bin\ReleaseTrial\DSoft.UI.Android.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Extensions\ContextExtensions.cs" />
+    <Compile Include="Core\AndroidCore.cs" />
+    <Compile Include="Views\DSToolbarView.cs" />
+    <Compile Include="Views\DSNavigationBarView.cs" />
+    <Compile Include="Extensions\DSTypeExtensions.cs" />
+    <Compile Include="Grid\DSGridViewActivity.cs" />
+    <Compile Include="Grid\DSGridViewFragment.cs" />
+    <Compile Include="Views\DSMultiDirectionScrollView.cs" />
+    <Compile Include="Grid\Views\Collections\DSGridRowViewCollection.cs" />
+    <Compile Include="Grid\Views\Collections\DSGridCellViewCollection.cs" />
+    <Compile Include="Core\DSTextView.cs" />
+    <Compile Include="Grid\Views\DSGridRowView.cs" />
+    <Compile Include="Grid\Views\DSGridCellView.cs" />
+    <Compile Include="Views\DSAbsoluteLayout.cs" />
+    <Compile Include="Grid\DSGridView.cs" />
+    <Compile Include="Grid\Views\DSGridViewContainer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable-mdpi\checkmark.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\checkmark.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\layout\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj">
+      <Project>{6ed1747b-4df9-4b64-997c-616ffd087b2e}</Project>
+      <Name>DSoft.Datatypes.Grid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSoft.Themes\DSoft.Themes.csproj">
+      <Project>{dc3479b1-6928-48f2-afc0-c5f1328d2452}</Project>
+      <Name>DSoft.Themes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
+</Project>

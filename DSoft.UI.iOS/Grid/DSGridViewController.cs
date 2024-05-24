@@ -135,8 +135,10 @@ namespace DSoft.UI.Grid
 		{
 			if (iOSHelper.IsiOS7)
 			{
-				this.AutomaticallyAdjustsScrollViewInsets = true;
-			}
+#pragma warning disable CA1422 // Validate platform compatibility
+                AutomaticallyAdjustsScrollViewInsets = true;
+#pragma warning restore CA1422 // Validate platform compatibility
+            }
 
 			DisableNavigationControllerSizing = true;
 
@@ -185,9 +187,11 @@ namespace DSoft.UI.Grid
 
 		public override void WillRotate(UIInterfaceOrientation toInterfaceOrientation, double duration)
 		{
-			base.WillRotate(toInterfaceOrientation, duration);
+#pragma warning disable CA1422 // Validate platform compatibility
+            base.WillRotate(toInterfaceOrientation, duration);
+#pragma warning restore CA1422 // Validate platform compatibility
 
-			if (!DisableNavigationControllerSizing)
+            if (!DisableNavigationControllerSizing)
 			{
 
 				if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone && iOSHelper.IsiOS7)
@@ -209,9 +213,11 @@ namespace DSoft.UI.Grid
 
 		public override void DidRotate(UIInterfaceOrientation fromInterfaceOrientation)
 		{
-			base.DidRotate(fromInterfaceOrientation);
+#pragma warning disable CA1422 // Validate platform compatibility
+            base.DidRotate(fromInterfaceOrientation);
+#pragma warning restore CA1422 // Validate platform compatibility
 
-			if (!DisableNavigationControllerSizing)
+            if (!DisableNavigationControllerSizing)
 			{
 				if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone && iOSHelper.IsiOS7)
 				{

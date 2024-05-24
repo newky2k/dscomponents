@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net6.0;</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net8.0;</TargetFrameworks>
 		<RootNamespace>DSoft.Themes</RootNamespace>
 		<AssemblyName>DSoft.Themes</AssemblyName>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -18,8 +18,8 @@
 		<PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Summary>Themeing library for DSoft.Componenents</Summary>
-		<Description>Themeing library for DSoft.Componenents</Description>
+		<Summary>Themeing library for DSoft.Components</Summary>
+		<Description>Themeing library for DSoft.Components</Description>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<Copyright>Copyright © 2022 DSoft</Copyright>
 		<ReleaseVersion>3.1.1</ReleaseVersion>

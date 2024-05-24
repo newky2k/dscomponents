@@ -1,24 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{49BDAB72-0189-422E-A10A-348E40095376}</ProjectGuid>
-    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{792E63A8-59BC-4C4C-B033-E4376B5CECC2}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>DSoft.UI</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>2.6</ReleaseVersion>
+    <ReleaseVersion>3.1.1</ReleaseVersion>
     <AssemblyName>DSoft.UI</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>DSoft.DSGrid</PackageId>
+    <PackageVersion>3.1.1</PackageVersion>
+    <Authors>newky2k</Authors>
+    <PackageLicenseUrl>https://github.com/newky2k/dscomponents/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>newky2k</Owners>
+    <PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
+    <Summary>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Summary>
+    <Title>DSoft.DSGrid</Title>
+    <Description>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\classic\Debug</OutputPath>
-    <IntermediateOutputPath>obj\classic\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <OutputPath>bin\unified\Debug</OutputPath>
+    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,49 +39,27 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
-    <OutputPath>bin\classic\Release</OutputPath>
-    <IntermediateOutputPath>obj\classic\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <OutputPath>bin\unified\Release</OutputPath>
+    <IntermediateOutputPath>obj\unified\$(Platform)\$(Configuration)\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial|AnyCPU' ">
-    <Optimize>false</Optimize>
-    <OutputPath>bin\classic\ReleaseTrial</OutputPath>
-    <IntermediateOutputPath>obj\classic\$(Platform)\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>TRIAL</DefineConstants>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="monotouch" />
     <Reference Include="System.Data" />
+    <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Grid\" />
-    <Folder Include="Grid\Views\" />
-    <Folder Include="Grid\Views\Collections\" />
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\DSoft.Datatypes\DSoft.Datatypes.csproj">
-      <Project>{43D8A430-2E61-4CEE-B42A-61DC175307B6}</Project>
-      <Name>DSoft.Datatypes</Name>
+    <ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj">
+      <Project>{6ed1747b-4df9-4b64-997c-616ffd087b2e}</Project>
+      <Name>DSoft.Datatypes.Grid</Name>
     </ProjectReference>
     <ProjectReference Include="..\DSoft.Themes\DSoft.Themes.csproj">
-      <Project>{52C0D9D1-737D-4AB5-8D19-0A31798870CA}</Project>
+      <Project>{dc3479b1-6928-48f2-afc0-c5f1328d2452}</Project>
       <Name>DSoft.Themes</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj">
-      <Project>{7E3547A7-4292-42E9-A509-71D50DCF157F}</Project>
-      <Name>DSoft.Datatypes.Grid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -88,4 +79,9 @@
     <BundleResource Include="Resources\checkmark.png" />
     <BundleResource Include="Resources\checkmark%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>

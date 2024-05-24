@@ -21,6 +21,8 @@ using DSoft.Datatypes.UI.Collections;
 using DSoft.Datatypes.UI;
 using Android.Graphics.Drawables;
 using DSoft.Themes.Toolbar;
+using Android;
+using AAtribute = Android.Resource.Attribute;
 
 namespace DSoft.UI.Views
 {	
@@ -222,7 +224,7 @@ namespace DSoft.UI.Views
 			mLeftArea.SetBackgroundColor (Color.Transparent);
 			ContentView.AddView (mLeftArea);
 																	
-			mTitleLabel = new TextView (Context, null, Android.Resource.Attribute.TextAppearanceMedium);
+			mTitleLabel = new TextView (Context, null, AAtribute.TextAppearanceMedium);
 			mTitleLabel.Text = "Title";
 			mTitleLabel.Gravity = GravityFlags.Center;
 

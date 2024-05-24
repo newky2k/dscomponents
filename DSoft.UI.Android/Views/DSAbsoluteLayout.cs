@@ -10,6 +10,7 @@ using Android.Views;
 using Android.Content;
 using Android.Util;
 using Android.Runtime;
+using Android.Content.Res;
 
 namespace DSoft.UI.Views
 {
@@ -231,7 +232,7 @@ namespace DSoft.UI.Views
 				base (c, attrs)
 			{
 
-				Android.Content.Res.TypedArray a = c.ObtainStyledAttributes (attrs, AbsoluteLayout_Layout);
+				TypedArray a = c.ObtainStyledAttributes (attrs, AbsoluteLayout_Layout);
 
 				x = a.GetDimensionPixelOffset (AbsoluteLayout_Layout_layout_x, 0);
 				y = a.GetDimensionPixelOffset (AbsoluteLayout_Layout_layout_y, 0);

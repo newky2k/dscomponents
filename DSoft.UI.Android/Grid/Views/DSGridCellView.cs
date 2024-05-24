@@ -20,7 +20,7 @@ using DSoft.Datatypes.Formatters;
 using Android.OS;
 using System.Threading;
 using Android.App;
-using DSTextAlignment = DSoft.Datatypes.Enums.TextAlignment;
+using TextAlignment = DSoft.Datatypes.Enums.TextAlignment;
 
 namespace DSoft.UI.Grid.Views
 {
@@ -431,12 +431,12 @@ namespace DSoft.UI.Grid.Views
 
 						switch (textAlign)
 						{
-							case DSTextAlignment.Middle:
+							case TextAlignment.Middle:
 								{
 									gavFlags = GravityFlags.CenterVertical | GravityFlags.CenterHorizontal;
 								}
 								break;
-							case DSTextAlignment.Right:
+							case TextAlignment.Right:
 								{
 									gavFlags = GravityFlags.CenterVertical | GravityFlags.Right;
 								}
@@ -566,12 +566,12 @@ namespace DSoft.UI.Grid.Views
 
 					switch (textAlign)
 					{
-						case DSTextAlignment.Middle:
+						case TextAlignment.Middle:
 							{
 								gavFlags = GravityFlags.CenterVertical | GravityFlags.CenterHorizontal;
 							}
 							break;
-						case DSTextAlignment.Right:
+						case TextAlignment.Right:
 							{
 								gavFlags = GravityFlags.CenterVertical | GravityFlags.Right;
 							}

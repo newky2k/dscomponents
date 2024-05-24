@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net6.0;</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net8.0;</TargetFrameworks>
 		<RootNamespace>DSoft.Datatypes.Grid</RootNamespace>
 		<AssemblyName>DSoft.Datatypes.Grid</AssemblyName>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -21,7 +21,7 @@
 		<Summary>Grid specific Datatypes library for DSoft.Componenents</Summary>
 		<Description>Grid specific Datatypes library for DSoft.Componenents</Description>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<Copyright>Copyright © 2022 DSoft</Copyright>
+		<Copyright>Copyright © 20224 LoDaTek Ltd</Copyright>
 		<ReleaseVersion>3.1.1</ReleaseVersion>
 	</PropertyGroup>
 	<ItemGroup>

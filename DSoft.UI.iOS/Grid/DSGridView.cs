@@ -301,7 +301,6 @@ namespace DSoft.UI.Grid
 		private int mTopInset = -1;
 		private DSGridRowView m_HeaderView;
 
-		private int mTrialTapCount = 0;
 		private int mRowStart = 0;
 
 		private DSGridTheme mTheme;
@@ -713,25 +712,6 @@ namespace DSoft.UI.Grid
 			return (!(IsAboveScreen (aTop, aHeight)
 			|| IsBelowScreen (aTop, aHeight)));
 			  
-		}
-
-		/// <summary>
-		/// Handles the trial tap.
-		/// </summary>
-		private void HandleTrialTap ()
-		{
-			if (mTrialTapCount == 0 || mTrialTapCount > 5)
-			{
-				var alertView = new UIAlertView ("Trial Mode"
-				, "This is a trial version of DSofts DSGridView control.\n  Please visit the Xamarin component store to purchase the full version."
-				, null, "OK", null);
-				
-				alertView.Show ();
-				
-				mTrialTapCount = 1;
-			}
-			
-			mTrialTapCount++;
 		}
 
 		#endregion

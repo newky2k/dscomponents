@@ -548,7 +548,7 @@ namespace DSoft.UI
 		{
 			mScroller = new Scroller (Context);
 			Focusable = true;
-			DescendantFocusability = Android.Views.DescendantFocusability.AfterDescendants;
+			DescendantFocusability = DescendantFocusability.AfterDescendants;
 			SetWillNotDraw (false);
 			ViewConfiguration configuration = ViewConfiguration.Get (Context);
 			mTouchSlop = configuration.ScaledTouchSlop;
