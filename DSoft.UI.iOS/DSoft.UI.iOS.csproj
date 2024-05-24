@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+	<PropertyGroup>
+		<TargetFrameworks>Xamarin.iOS10;net8-ios</TargetFrameworks>
+		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RootNamespace>DSoft.UI</RootNamespace>
+		<AssemblyName>DSoft.UI</AssemblyName>
+		<PackageId>DSoft.DSGrid</PackageId>
+		<PackageVersion>3.2.0</PackageVersion>
+		<Version>3.2.0</Version>
+		<AssemblyVersion>3.2.0</AssemblyVersion>
+		<FileVersion>3.2.0</FileVersion>
+		<Authors>newky2k</Authors>
+		<Company>newky2k</Company>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Owners>newky2k</Owners>
+		<PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Summary>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Summary>
+		<Title>DSoft.DSGrid</Title>
+		<Description>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Description>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
+		<ReleaseVersion>3.2.0</ReleaseVersion>
+	</PropertyGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'Xamarin.iOS10' ">
+		<Reference Include="System" />
+		<Reference Include="System.Xml" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Data" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj" />
+		<ProjectReference Include="..\DSoft.Datatypes\DSoft.Datatypes.csproj" />
+		<ProjectReference Include="..\DSoft.Themes\DSoft.Themes.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<None Remove="Resources\checkmark.png" />
+		<None Remove="Resources\checkmark@2x.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+		<BundleResource Include="Resources\checkmark.png" />
+		<BundleResource Include="Resources\checkmark@2x.png" />
+	</ItemGroup>
+</Project>

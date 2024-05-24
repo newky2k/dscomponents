@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-android</TargetFramework>
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+		<Nullable>disable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>DSoft.UI.Android</Title>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageId>DSoft.DSGrid.Android</PackageId>
+		<PackageVersion>3.2.0-prerelease</PackageVersion>
+		<Version>3.2.0</Version>
+		<AssemblyVersion>3.2.0</AssemblyVersion>
+		<FileVersion>3.2.0</FileVersion>
+		<Authors>newky2k</Authors>
+		<Company>newky2k</Company>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Owners>newky2k</Owners>
+		<PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Summary>A lightweight and simple-to-use xamarin data grid for Android</Summary>
+		<Title>DSoft.DSGrid.Android</Title>
+		<Description>A lightweight and simple-to-use xamarin data grid for Android</Description>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
+		<ReleaseVersion>3.2.0</ReleaseVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj" />
+		<ProjectReference Include="..\DSoft.Themes\DSoft.Themes.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Properties\" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+</Project>

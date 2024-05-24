@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net8.0;</TargetFrameworks>
+		<RootNamespace>DSoft.Datatypes.Grid</RootNamespace>
+		<AssemblyName>DSoft.Datatypes.Grid</AssemblyName>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>DSoft.Datatypes.Grid</Title>
+		<PackageId>DSoft.Datatypes.Grid</PackageId>
+		<PackageVersion>3.2.0</PackageVersion>
+		<Version>3.2.0</Version>
+		<AssemblyVersion>3.2.0</AssemblyVersion>
+		<FileVersion>3.2.0</FileVersion>
+		<Authors>newky2k</Authors>
+		<Company>newky2k</Company>
+		<Owners>newky2k</Owners>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Summary>Grid specific Datatypes library for DSoft.Componenents</Summary>
+		<Description>Grid specific Datatypes library for DSoft.Componenents</Description>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<Copyright>Copyright © 20224 LoDaTek Ltd</Copyright>
+		<ReleaseVersion>3.2.0</ReleaseVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DSoft.Datatypes\DSoft.Datatypes.csproj" />
+	</ItemGroup>
+</Project>
