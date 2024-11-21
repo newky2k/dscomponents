@@ -1,20 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0-android</TargetFramework>
-    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
-    <OutputType>Exe</OutputType>
-    <Nullable>disable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationId>com.companyname.SampleAndroid</ApplicationId>
-    <ApplicationVersion>1</ApplicationVersion>
-    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Resources\drawable\first.png" />
-    <None Remove="Resources\drawable\Icon.png" />
-    <None Remove="Resources\drawable\second.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DSoft.UI.Android\DSoft.UI.Android.csproj" />
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-android</TargetFramework>
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+		<OutputType>Exe</OutputType>
+		<Nullable>disable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ApplicationId>com.companyname.SampleAndroid</ApplicationId>
+		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<SignAssembly>false</SignAssembly>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Resources\drawable\first.png" />
+		<None Remove="Resources\drawable\Icon.png" />
+		<None Remove="Resources\drawable\second.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DSoft.UI.Android\DSoft.UI.Android.csproj" />
+	</ItemGroup>
 </Project>

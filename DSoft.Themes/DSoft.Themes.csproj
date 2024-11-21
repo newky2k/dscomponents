@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net8.0;</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net8.0;net9.0;</TargetFrameworks>
 		<RootNamespace>DSoft.Themes</RootNamespace>
 		<AssemblyName>DSoft.Themes</AssemblyName>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>DSoft.Themes</Title>
 		<PackageId>DSoft.Themes</PackageId>
 		<Version>3.2.0</Version>
 		<AssemblyVersion>3.2.0</AssemblyVersion>
 		<FileVersion>3.2.0</FileVersion>
-		<Authors>newky2k</Authors>
-		<Company>newky2k</Company>
-		<Owners>newky2k</Owners>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
 		<Summary>Themeing library for DSoft.Components</Summary>
 		<Description>Themeing library for DSoft.Components</Description>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\readme.md" Pack="true" PackagePath="\" />

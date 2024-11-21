@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".ci", ".ci", "{572E36BC-901
 	ProjectSection(SolutionItems) = preProject
 		azure-pipelines-mergetest.yml = azure-pipelines-mergetest.yml
 		azure-pipelines-release.yml = azure-pipelines-release.yml
+		Directory.Build.props = Directory.Build.props
 		README.md = README.md
 	EndProjectSection
 EndProject

@@ -152,7 +152,7 @@ namespace DSoft.Datatypes.Grid.Data
 		/// <returns>The value.</returns>
 		/// <param name="RowIndex">Row index.</param>
 		/// <param name="ColumnName">Column name.</param>
-		public virtual DSDataValue GetValue (int RowIndex, String ColumnName)
+		public virtual DSDataValue GetValue (int RowIndex, string ColumnName)
 		{
 			return GetRow(RowIndex).Items[ColumnName];
 			//return Rows [RowIndex].Items [ColumnName];
@@ -164,7 +164,7 @@ namespace DSoft.Datatypes.Grid.Data
 		/// <param name="RowIndex">Row index.</param>
 		/// <param name="ColumnName">Column name.</param>
 		/// <param name="Value">Value.</param>
-		public virtual void SetValue (int RowIndex, String ColumnName, object Value)
+		public virtual void SetValue (int RowIndex, string ColumnName, object Value)
 		{
 			GetRow(RowIndex).Items[ColumnName].Value = Value;
 			//Rows [RowIndex].Items [ColumnName].Value = Value;
@@ -173,21 +173,23 @@ namespace DSoft.Datatypes.Grid.Data
         /// <summary>
         /// Gets the cell background colour
         /// </summary>
-        /// <returns>The background color, null by default</returns>
         /// <param name="RowIndex">Row index.</param>
         /// <param name="ColumnName">Column name.</param>
-        public virtual DSColor GetCellBackgroundColor(int RowIndex, String ColumnName, bool isSelected)
+        /// <param name="isSelected">if set to <c>true</c> [is selected].</param>
+        /// <returns>The background color, null by default</returns>
+        public virtual DSColor GetCellBackgroundColor(int RowIndex, string ColumnName, bool isSelected)
         {
             return null;
         }
 
-		/// <summary>
-		/// Gets the cell foreground colour
-		/// </summary>
-		/// <returns>The foreground color, null by default</returns>
-		/// <param name="RowIndex">Row index.</param>
-		/// <param name="ColumnName">Column name.</param>
-		public virtual DSColor GetCellForegroundColor(int RowIndex, String ColumnName, bool isSelected)
+        /// <summary>
+        /// Gets the cell foreground colour
+        /// </summary>
+        /// <param name="RowIndex">Row index.</param>
+        /// <param name="ColumnName">Column name.</param>
+        /// <param name="isSelected">if set to <c>true</c> [is selected].</param>
+        /// <returns>The foreground color, null by default</returns>
+        public virtual DSColor GetCellForegroundColor(int RowIndex, string ColumnName, bool isSelected)
 		{
 			return null;
 		}
@@ -198,7 +200,7 @@ namespace DSoft.Datatypes.Grid.Data
 		/// </summary>
 		/// <returns>The of row.</returns>
 		/// <param name="RowId">Row identifier.</param>
-		public virtual int IndexOfRow(String RowId)
+		public virtual int IndexOfRow(string RowId)
 		{
 			foreach (var aRow in Rows)
 			{
@@ -214,7 +216,7 @@ namespace DSoft.Datatypes.Grid.Data
 		/// </summary>
 		/// <returns>The of rows.</returns>
 		/// <param name="RowIds">Row identifiers.</param>
-		public int[] IndexesOfRows(String[] RowIds)
+		public int[] IndexesOfRows(string[] RowIds)
 		{
 			var ids = new List<int>();
 
@@ -231,7 +233,7 @@ namespace DSoft.Datatypes.Grid.Data
 		/// </summary>
 		/// <returns>The with identifier.</returns>
 		/// <param name="RowId">Row identifier.</param>
-		public virtual DSDataRow GetRow(String RowId)
+		public virtual DSDataRow GetRow(string RowId)
 		{
 			foreach (var aRow in Rows)
 			{
@@ -247,7 +249,7 @@ namespace DSoft.Datatypes.Grid.Data
 		/// </summary>
 		/// <returns>The rows.</returns>
 		/// <param name="RowIds">Row identifiers.</param>
-		public DSDataRow[] GetRows(String[] RowIds)
+		public DSDataRow[] GetRows(string[] RowIds)
 		{
 			var results = new List<DSDataRow>();
 

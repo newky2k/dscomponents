@@ -1,0 +1,45 @@
+<Project>
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageProjectUrl>https://github.com/newky2k/dscomponents</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
+		<Authors>newky2k</Authors>
+		<Owners>newky2k</Owners>
+		<Company>newky2k</Company>
+		<LangVersion>Latest</LangVersion>
+		<Configurations>Debug;Release</Configurations>
+		<NoWarn>1701;1702;CS8002</NoWarn>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)'=='Release'">
+		<!-- sourcelink: Declare that the Repository URL can be published to NuSpec -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<!-- sourcelink: Embed source files that are not tracked by the source control manager to the PDB -->
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<!-- sourcelink: Include PDB in the built .nupkg -->
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	</PropertyGroup>
+
+	<ItemGroup Condition=" '$(Configuration)'=='Release'">
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>$(MSBuildProjectDirectory)\DSoft.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+</Project>
