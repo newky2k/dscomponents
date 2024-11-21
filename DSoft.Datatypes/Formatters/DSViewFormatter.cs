@@ -33,11 +33,11 @@ namespace DSoft.Datatypes.Formatters
 			
 		}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="DSoft.Datatypes.Formatters.DSViewFormatter"/> class.
-		/// </summary>
-		/// <param name="">.</param>
-		public DSViewFormatter(IDSCustomView custView)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DSoft.Datatypes.Formatters.DSViewFormatter" /> class.
+        /// </summary>
+        /// <param name="custView">The customer view.</param>
+        public DSViewFormatter(IDSCustomView custView)
 		{
 			mView = custView;
 		}
