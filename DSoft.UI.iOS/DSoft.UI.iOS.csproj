@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net8-ios;net9-ios</TargetFrameworks>
+		<TargetFramework>net10.0-ios</TargetFramework>
 		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
 		<RootNamespace>DSoft.UI</RootNamespace>
 		<AssemblyName>DSoft.UI</AssemblyName>
@@ -22,12 +22,6 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<None Remove="Resources\checkmark.png" />
-		<None Remove="Resources\checkmark@2x.png" />
-	</ItemGroup>
-	<ItemGroup>
 		<None Include="..\readme.md" Pack="true" PackagePath="\" />
-		<BundleResource Include="Resources\checkmark.png" />
-		<BundleResource Include="Resources\checkmark@2x.png" />
 	</ItemGroup>
 </Project>
