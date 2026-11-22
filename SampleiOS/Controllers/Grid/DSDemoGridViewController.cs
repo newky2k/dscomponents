@@ -1,4 +1,4 @@
-// ****************************************************************************
+﻿// ****************************************************************************
 // <copyright file="DSDemoGridViewController.cs" company="DSoft Developments">
 //    Created By David Humphreys
 //    Copyright © David Humphreys 2015
@@ -227,17 +227,19 @@ namespace DSComponentsSample.Controllers.Grid
         public override void OnDoubleCellTap(object sender)
         {
             var aSender = (DSGridCellView)sender;
-            var alert = new UIAlertView("Double Tap", String.Format("{0}:{1}", aSender.Processor.RowIndex.ToString(), aSender.Processor.ColumnIndex.ToString()), null, "OK", null);
-
-            alert.Show();
+            // UIAlertView is unavailable in UIScene-based apps; use UIAlertController.
+            var alert = UIAlertController.Create("Double Tap", String.Format("{0}:{1}", aSender.Processor.RowIndex.ToString(), aSender.Processor.ColumnIndex.ToString()), UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            PresentViewController(alert, true, null);
         }
 
         public override void OnSingleCellTap(object sender)
         {
             var aSender = (DSGridCellView)sender;
-            var alert = new UIAlertView("Single Tap", String.Format("{0}:{1}", aSender.Processor.RowIndex.ToString(), aSender.Processor.ColumnIndex.ToString()), null, "OK", null);
-
-            alert.Show();
+            // UIAlertView is unavailable in UIScene-based apps; use UIAlertController.
+            var alert = UIAlertController.Create("Single Tap", String.Format("{0}:{1}", aSender.Processor.RowIndex.ToString(), aSender.Processor.ColumnIndex.ToString()), UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            PresentViewController(alert, true, null);
 
         }
     }
