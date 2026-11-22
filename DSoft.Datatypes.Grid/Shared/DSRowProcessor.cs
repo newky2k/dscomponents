@@ -163,9 +163,16 @@ namespace DSoft.Datatypes.Grid.Shared
 		public DSGridViewCellInfoCollection Columns {
 			get
 			{
-				return GridView.Processor.ColDefs;
+				//a processor that has been disposed (the grid was reloaded) no longer has a grid
+				return GridView?.Processor.ColDefs;
 			}
 		}
+
+		/// <summary>
+		/// Gets a value indicating whether this processor has been disposed, which happens when the grid is reloaded.
+		/// </summary>
+		/// <value><c>true</c> if disposed; otherwise, <c>false</c>.</value>
+		public bool IsDisposed { get; private set; }
 
 		/// <summary>
 		/// The type of the position.
@@ -255,6 +262,7 @@ namespace DSoft.Datatypes.Grid.Shared
 		/// <see cref="DSoft.Datatypes.Grid.Shared.DSRowProcessor"/> was occupying.</remarks>
 		public void Dispose()
 		{
+			IsDisposed = true;
 			mGridView = null;
 			mCells = null;
 			mViewInvalidatedAction = null;
