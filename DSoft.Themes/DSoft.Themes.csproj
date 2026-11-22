@@ -6,15 +6,15 @@
 		<AssemblyName>DSoft.Themes</AssemblyName>
 		<Title>DSoft.Themes</Title>
 		<PackageId>DSoft.Themes</PackageId>
-		<Version>3.2.0</Version>
-		<AssemblyVersion>3.2.0</AssemblyVersion>
-		<FileVersion>3.2.0</FileVersion>
 		<Summary>Themeing library for DSoft.Components</Summary>
 		<Description>Themeing library for DSoft.Components</Description>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>DSIcon.png</PackageIcon>
+		<PackageReleaseNotes>Added support for .NET 10.0 and .NET 11.0</PackageReleaseNotes>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\DSIcon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Remove="Resources\downArrow.png" />

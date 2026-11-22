@@ -1,17 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net10.0-android</TargetFramework>
+		<TargetFrameworks>net10.0-android;net11.0-android</TargetFrameworks>
 		<SupportedOSPlatformVersion>33</SupportedOSPlatformVersion>
 		<Nullable>disable</Nullable>
 		<Title>DSoft.UI.Android</Title>
 		<PackageId>DSoft.DSGrid.Android</PackageId>
-		<Version>3.2.0</Version>
-		<AssemblyVersion>3.2.0</AssemblyVersion>
-		<FileVersion>3.2.0</FileVersion>
 		<Summary>A lightweight and simple-to-use xamarin data grid for Android</Summary>
 		<Title>DSoft.DSGrid.Android</Title>
 		<Description>A lightweight and simple-to-use xamarin data grid for Android</Description>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>DSIcon.png</PackageIcon>
+		<PackageReleaseNotes>Added support for .NET 10.0 and .NET 11.0</PackageReleaseNotes>
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\DSoft.Datatypes.Grid\DSoft.Datatypes.Grid.csproj" />
@@ -21,6 +20,7 @@
 		<Folder Include="Properties\" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\DSIcon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 </Project>
