@@ -1,7 +1,7 @@
 # Release: on every push to main, builds Release and pushes the DSoft.Datatypes, DSoft.Datatypes.Grid,
 # DSoft.Themes, DSoft.DSGrid and DSoft.DSGrid.Android packages to nuget.org as 3.2.yyMM.<run number>
 # plus RELEASE_SUFFIX, then tags the commit and creates a GitHub release with the packages attached.
-# RELEASE_SUFFIX is '-prerelease' (as the old Azure pipeline did); set it to '' for a stable version.
+# RELEASE_SUFFIX is empty for a stable version; set it to '-prerelease' for a prerelease.
 # Signs in to nuget.org with Trusted Publishing (OIDC), so no API key is stored.
 name: Release
 
@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  RELEASE_SUFFIX: '-prerelease'
+  RELEASE_SUFFIX: ''
 
 jobs:
   release:
