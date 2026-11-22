@@ -164,7 +164,7 @@ namespace DSoft.Datatypes.Grid.Shared
 			get
 			{
 				//a processor that has been disposed (the grid was reloaded) no longer has a grid
-				return GridView?.Processor.ColDefs;
+				return GridView?.Processor?.ColDefs;
 			}
 		}
 
