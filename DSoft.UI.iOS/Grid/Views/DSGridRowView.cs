@@ -132,6 +132,10 @@ namespace DSoft.UI.Grid.Views
 		/// </summary>
 		private void ReDraw ()
 		{
+			//a row view that was torn down by a reload can still be asked to draw once, and has no grid or cells left
+			if (Processor.IsDisposed || Processor.GridView == null)
+				return;
+
 			foreach (var cel in Processor.Columns)
 			{
 				var cell = Processor.Cells [cel.xPosition] as DSGridCellView;

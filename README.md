@@ -6,7 +6,7 @@ DSGridView is a fast lightweight and customisable data grid component for all yo
     * Can be set globally or for each instance of DSGridView   
     * Cross-platform for use across supported platforms  
     * Easy to implement your own themes or override elements of the default ones   
-* Works on .NET 8.0 iOS and Android (Beta) Native
+* Works on .NET 10 and .NET 11 iOS and Android (Beta) Native
     * MAUI support in development  
 * Cross-plafrom support for Datasources    
 * High performance loading and rendering - 100,000 records as quick as 20

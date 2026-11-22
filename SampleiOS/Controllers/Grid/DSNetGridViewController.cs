@@ -23,7 +23,7 @@ namespace DSComponentsSample.Controllers.Grid
 
         static readonly Uri RssFeedUrl = new Uri("http://phobos.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=25/xml");
         private FeedDataTable mDatasource = new FeedDataTable();
-        private UIAlertView mAlert = null;
+        private UIAlertController mAlert = null;
 
         #endregion
 
@@ -102,8 +102,8 @@ namespace DSComponentsSample.Controllers.Grid
 
                 UIApplication.SharedApplication.NetworkActivityIndicatorVisible = false;
 
-                mAlert.DismissWithClickedButtonIndex(0, true);
-
+                HideBusy(() =>
+                {
                 if (e.Error != null)
                 {
                     DisplayError("Warning", "The rss feed could not be downloaded: " + e.Error.Message);
@@ -122,8 +122,7 @@ namespace DSComponentsSample.Controllers.Grid
                         foreach (var v in RssParser.Parse(e.Result))
                             mDatasource.Apps.Add(v);
 
-                        mAlert = new UIAlertView("Fetching Icons...", "", null, null, null);
-                        mAlert.Show();
+                        ShowBusy("Fetching Icons...");
                         UIApplication.SharedApplication.NetworkActivityIndicatorVisible = true;
 
                         Task.Run(() =>
@@ -146,7 +145,7 @@ namespace DSComponentsSample.Controllers.Grid
                         }).ContinueWith(prevTask =>
                         {
 
-                            mAlert.DismissWithClickedButtonIndex(0, true);
+                            HideBusy(null);
                             UIApplication.SharedApplication.NetworkActivityIndicatorVisible = false;
 
                             GridView.ReloadData();
@@ -159,20 +158,43 @@ namespace DSComponentsSample.Controllers.Grid
                         DisplayError("Warning", "Malformed Xml was found in the Rss Feed.");
                     }
                 }
+                });
             });
 
         }
 
         private void DisplayError(string title, string errorMessage, params object[] formatting)
         {
-            var alert = new UIAlertView(title, string.Format(errorMessage, formatting), null, "ok", null);
-            alert.Show();
+            // UIAlertView is unavailable in UIScene-based apps; use UIAlertController.
+            var alert = UIAlertController.Create(title, string.Format(errorMessage, formatting), UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            PresentViewController(alert, true, null);
+        }
+
+        private void ShowBusy(string title)
+        {
+            mAlert = UIAlertController.Create(title, "", UIAlertControllerStyle.Alert);
+            PresentViewController(mAlert, true, null);
+        }
+
+        // Dismisses the busy alert, then runs next (a new alert cannot be presented while one is dismissing)
+        private void HideBusy(Action next)
+        {
+            var alert = mAlert;
+            mAlert = null;
+
+            if (alert == null)
+            {
+                next?.Invoke();
+                return;
+            }
+
+            alert.DismissViewController(false, () => next?.Invoke());
         }
 
         private void ReloadData()
         {
-            mAlert = new UIAlertView("Downloading...", "", null, null, null);
-            mAlert.Show();
+            ShowBusy("Downloading...");
 
             // Show the user that data is about to be downloaded
             UIApplication.SharedApplication.NetworkActivityIndicatorVisible = true;

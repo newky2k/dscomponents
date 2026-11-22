@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net10.0-ios</TargetFramework>
+		<TargetFrameworks>net10.0-ios;net11.0-ios</TargetFrameworks>
 		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
 		<RootNamespace>DSoft.UI</RootNamespace>
 		<AssemblyName>DSoft.UI</AssemblyName>
 		<PackageId>DSoft.DSGrid</PackageId>
-		<Version>3.2.0</Version>
-		<AssemblyVersion>3.2.0</AssemblyVersion>
-		<FileVersion>3.2.0</FileVersion>
 		<Summary>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Summary>
 		<Title>DSoft.DSGrid</Title>
 		<Description>A lightweight and simple-to-use xamarin data grid for iPhone and iPad</Description>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>DSIcon.png</PackageIcon>
+		<PackageReleaseNotes>Added support for .NET 10.0 and .NET 11.0</PackageReleaseNotes>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -22,6 +21,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\DSIcon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 </Project>

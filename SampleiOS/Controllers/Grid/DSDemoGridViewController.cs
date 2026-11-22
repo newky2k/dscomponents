@@ -1,4 +1,4 @@
-// ****************************************************************************
+﻿// ****************************************************************************
 // <copyright file="DSDemoGridViewController.cs" company="DSoft Developments">
 //    Created By David Humphreys
 //    Copyright © David Humphreys 2015
@@ -68,14 +68,14 @@ namespace DSComponentsSample.Controllers.Grid
 
                 aButton.Clicked += (object sender, EventArgs e) =>
                 {
-                    var alert = new UIActionSheet("Themes");
+                    var alert = new SceneActionSheet(this, "Themes");
 
                     alert.AddButton("Default");
                     alert.AddButton("New");
                     alert.AddButton("iTunes");
                     alert.AddButton("Cancel");
                     alert.CancelButtonIndex = 3;
-                    alert.Clicked += (object action, UIButtonEventArgs e2) =>
+                    alert.Clicked += (object action, SheetButtonEventArgs e2) =>
                     {
                         DSGridTheme newtheme = null;
 
@@ -128,14 +128,14 @@ namespace DSComponentsSample.Controllers.Grid
 
                 aButton2.Clicked += (object sender, EventArgs e) =>
                 {
-                    var alert = new UIActionSheet("Scroll To: 30");
+                    var alert = new SceneActionSheet(this, "Scroll To: 30");
 
                     alert.AddButton("Top");
                     alert.AddButton("Middle");
                     alert.AddButton("Bottom");
                     alert.AddButton("Cancel");
                     alert.CancelButtonIndex = 3;
-                    alert.Clicked += (object action, UIButtonEventArgs e2) =>
+                    alert.Clicked += (object action, SheetButtonEventArgs e2) =>
                     {
 
                         switch (e2.ButtonIndex)
@@ -170,20 +170,20 @@ namespace DSComponentsSample.Controllers.Grid
                 var leftButton = new UIBarButtonItem(UIBarButtonSystemItem.Action);
                 leftButton.Clicked += (object sender, EventArgs e) =>
                 {
-                    var alert = new UIActionSheet("Options");
+                    var alert = new SceneActionSheet(this, "Options");
 
                     var mutliSelectText = (GridView.EnableMulitSelect) ? "Disable Multi-select" : "Enable Multi-Select";
                     var deselect = (GridView.EnableDeselection) ? "Disbale Deselection" : "Enable Deselection";
 
                     alert.AddButton(mutliSelectText);
                     alert.AddButton(deselect);
-                    alert.Add("Update Value");
+                    alert.AddButton("Update Value");
 
                     alert.AddButton("Cancel");
 
-                    alert.CancelButtonIndex = 2;
+                    alert.CancelButtonIndex = 3;
 
-                    alert.Clicked += (object action, UIButtonEventArgs e2) =>
+                    alert.Clicked += (object action, SheetButtonEventArgs e2) =>
                     {
 
                         switch (e2.ButtonIndex)
@@ -227,17 +227,19 @@ namespace DSComponentsSample.Controllers.Grid
         public override void OnDoubleCellTap(object sender)
         {
             var aSender = (DSGridCellView)sender;
-            var alert = new UIAlertView("Double Tap", String.Format("{0}:{1}", aSender.Processor.RowIndex.ToString(), aSender.Processor.ColumnIndex.ToString()), null, "OK", null);
-
-            alert.Show();
+            // UIAlertView is unavailable in UIScene-based apps; use UIAlertController.
+            var alert = UIAlertController.Create("Double Tap", String.Format("{0}:{1}", aSender.Processor.RowIndex.ToString(), aSender.Processor.ColumnIndex.ToString()), UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            PresentViewController(alert, true, null);
         }
 
         public override void OnSingleCellTap(object sender)
         {
             var aSender = (DSGridCellView)sender;
-            var alert = new UIAlertView("Single Tap", String.Format("{0}:{1}", aSender.Processor.RowIndex.ToString(), aSender.Processor.ColumnIndex.ToString()), null, "OK", null);
-
-            alert.Show();
+            // UIAlertView is unavailable in UIScene-based apps; use UIAlertController.
+            var alert = UIAlertController.Create("Single Tap", String.Format("{0}:{1}", aSender.Processor.RowIndex.ToString(), aSender.Processor.ColumnIndex.ToString()), UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            PresentViewController(alert, true, null);
 
         }
     }
