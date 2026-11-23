@@ -7,7 +7,7 @@
 		<RepositoryUrl>https://github.com/newky2k/dscomponents</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Copyright>Copyright © 2024 LoDaTek Ltd</Copyright>
+		<Copyright>Copyright © 2026 LoDaTek Ltd</Copyright>
 		<Authors>newky2k</Authors>
 		<Owners>newky2k</Owners>
 		<Company>newky2k</Company>
@@ -31,10 +31,10 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition=" '$(Configuration)'=='Release'">
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="11.0.100" PrivateAssets="All" />
 	</ItemGroup>
 
-	<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+	<PropertyGroup Condition="'$(TF_BUILD)' == 'true' OR '$(GITHUB_ACTIONS)' == 'true'">
 		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 

@@ -284,7 +284,7 @@ namespace DSoft.UI.Grid
 				var navControllerHieght = navController.Toolbar.Frame.Size.Height;
 				var tbBarHeight = statusbar + navControllerHieght;
 
-				UpdateGridFrame((float)tbBarHeight);
+				//UpdateGridFrame((float)tbBarHeight);
 
 			}
 		}

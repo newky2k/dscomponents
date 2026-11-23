@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net8.0;net9.0;</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;</TargetFrameworks>
 		<RootNamespace>DSoft.Datatypes</RootNamespace>
 		<AssemblyName>DSoft.Datatypes</AssemblyName>
 		<Title>DSoft.Datatypes</Title>
 		<PackageId>DSoft.Datatypes</PackageId>
-		<Version>3.2.0</Version>
-		<AssemblyVersion>3.2.0</AssemblyVersion>
-		<FileVersion>3.2.0</FileVersion>
 		<Summary>Datatypes library for DSoft.Componenents</Summary>
 		<Description>Datatypes library for DSoft.Componenents</Description>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>DSIcon.png</PackageIcon>
+		<PackageReleaseNotes>Added support for .NET 10.0 and .NET 11.0</PackageReleaseNotes>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\DSIcon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 </Project>

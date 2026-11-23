@@ -434,7 +434,8 @@ namespace DSoft.UI.Grid.Views
 
 								if (!String.IsNullOrWhiteSpace (fileName))
 								{
-									image = new UIImage (fileName);
+									image = UIImage.FromBundle(fileName);
+									//image = UIImage.FromFile(fileName);
 								}
 							}
 							else if (bValue is UIImage)

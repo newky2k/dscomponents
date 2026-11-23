@@ -567,7 +567,9 @@ namespace DSoft.UI.Grid
 
 				}
 
-				m_HeaderView.Frame = new CGRect (m_HeaderView.Frame.Left, this.ContentOffset.Y, this.ContentSize.Width, this.Theme.HeaderHeight).Integral ();
+				var posY = this.ContentOffset.Y + 113;
+				
+				m_HeaderView.Frame = new CGRect (m_HeaderView.Frame.Left, posY, this.ContentSize.Width, this.Theme.HeaderHeight).Integral ();
 				m_HeaderView.SetNeedsDisplay ();
 
 				if (m_HeaderView.Superview == null)

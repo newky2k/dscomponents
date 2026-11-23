@@ -88,13 +88,13 @@ namespace DSComponentsSample.Controllers.Grid
 
                 aButton.Clicked += (object sender, EventArgs e) =>
                 {
-                    var alert = new UIActionSheet("Switch DataSets");
+                    var alert = new SceneActionSheet(this, "Switch DataSets");
 
                     alert.AddButton("Example 1");
                     alert.AddButton("Example 2");
                     alert.AddButton("Cancel");
                     alert.CancelButtonIndex = 2;
-                    alert.Clicked += (object action, UIButtonEventArgs e2) =>
+                    alert.Clicked += (object action, SheetButtonEventArgs e2) =>
                     {
 
                         var curName = mGridView.TableName;
